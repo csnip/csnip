@@ -1,0 +1,20 @@
+%h1 Users Listing
+
+%p= link_to 'Add User', new_user_path
+
+%table
+  %thead
+    %tr
+      %th Login
+      %th Name
+      %th Email
+      %th Admin?
+      %th 
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.login
+        %td= user.name
+        %td= user.email
+        %td= (user.admin? ? "Yes" : "No")
+        %td= link_to "X", user_path(user), :method => :delete, :confirm => "Really delete #{user.login}?"

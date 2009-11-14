@@ -1,0 +1,18 @@
+%h1 User Details
+- if @user.errors[:base]
+  .error= @user.errors[:base]
+
+%p
+  Login:
+  = @user.login
+%p
+  Email:
+  = @user.email
+%p
+  Admin:
+  - if @user.admin?
+    %strong Yes
+  - else
+    No
+
+%p= link_to 'List', users_path
