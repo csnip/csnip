@@ -13,9 +13,7 @@
 +blueprint-typography("body.bp")
 +blueprint-scaffolding("body.bp")
 
-!blueprint_grid_columns = 24
-!field_set_width = (!blueprint_grid_columns - 4)
-!label_width = 2
+!blueprint_grid_columns = 18
 
 body.bp
   +blueprint-utilities
@@ -28,7 +26,7 @@ form.bp
   
   textarea 
     height: 70px
-    width: 315px
+    width: 250px
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 
@@ -38,19 +36,32 @@ form.bp
 #header, #footer
   +column(!blueprint_grid_columns)
 
-.user_info
+.user_info, .pet_information, .litter_information
   +column(!blueprint_grid_columns / 2)
 
 .pet_history, .address_container
   +prepend(1)
+  +column(!blueprint_grid_columns / 2, true)
+
+.finished
+  +column(!blueprint_grid_columns, true)
+  text-align: center
+  margin-bottom: 40px
+
+.city
+  input
+    width: 150px
+.postal_code
+  input
+    width: 80px
+  
+.for_cat .dog_only
+  display: none
+
+.for_dog .cat_only
+  display: none
+
+
+.county
   +column(10, true)
-
-.pet_information
-  +column(!blueprint_grid_columns / 2)
-
-/ .postal
-/   +column(3, false)
-/   +append(1)
-/ 
-/ .county
-/   +column(2, true)
+  

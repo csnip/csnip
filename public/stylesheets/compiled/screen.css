@@ -417,12 +417,12 @@ form.bp input.text, form.bp input.title {
 form.bp textarea {
   width: 390px;
   height: 250px; }
-/* line 29, ../../../app/stylesheets/screen.sass */
+/* line 27, ../../../app/stylesheets/screen.sass */
 form.bp textarea {
   height: 70px;
-  width: 315px; }
+  width: 250px; }
 
-/* line 35, ../../../app/stylesheets/screen.sass */
+/* line 33, ../../../app/stylesheets/screen.sass */
 #container {
   width: 950px;
   margin: 0 auto;
@@ -432,43 +432,71 @@ form.bp textarea {
   #container {
     display: block; }
 
-/* line 38, ../../../app/stylesheets/screen.sass */
+/* line 36, ../../../app/stylesheets/screen.sass */
 #header, #footer {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 950px; }
+  width: 710px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
   * html #header, * html #footer {
     overflow-x: hidden; }
 
-/* line 41, ../../../app/stylesheets/screen.sass */
-.user_info {
+/* line 39, ../../../app/stylesheets/screen.sass */
+.user_info, .pet_information, .litter_information {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 470px; }
+  width: 350px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
-  * html .user_info {
+  * html .user_info, * html .pet_information, * html .litter_information {
     overflow-x: hidden; }
 
-/* line 44, ../../../app/stylesheets/screen.sass */
+/* line 42, ../../../app/stylesheets/screen.sass */
 .pet_history, .address_container {
   padding-left: 40px;
   display: inline;
   float: left;
   margin-right: 0;
-  width: 390px; }
+  width: 350px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
   * html .pet_history, * html .address_container {
     overflow-x: hidden; }
 
-/* line 48, ../../../app/stylesheets/screen.sass */
-.pet_information {
+/* line 46, ../../../app/stylesheets/screen.sass */
+.finished {
   display: inline;
   float: left;
-  margin-right: 10px;
-  width: 470px; }
+  margin-right: 0;
+  width: 710px;
+  text-align: center;
+  margin-bottom: 40px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
-  * html .pet_information {
+  * html .finished {
+    overflow-x: hidden; }
+
+/* line 52, ../../../app/stylesheets/screen.sass */
+.city input {
+  width: 150px; }
+
+/* line 55, ../../../app/stylesheets/screen.sass */
+.postal_code input {
+  width: 80px; }
+
+/* line 58, ../../../app/stylesheets/screen.sass */
+.for_cat .dog_only {
+  display: none; }
+
+/* line 61, ../../../app/stylesheets/screen.sass */
+.for_dog .cat_only {
+  display: none; }
+
+/* line 65, ../../../app/stylesheets/screen.sass */
+.county {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 390px; }
+  /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
+  * html .county {
     overflow-x: hidden; }

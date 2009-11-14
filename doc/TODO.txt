@@ -5,3 +5,11 @@ have an about page?
 show phone number prominently so that people can also call
 how do we integrate, if at all, with http://www.csnip.org/ ?
 default page should be new appt. page instead of index?
+
+style a notes class
+
+add for_dog and for_cat class to form when 
+
+skin the website to look like c-snip or add a iframe to c-snip website.
+
+write specs to pull information for appointments 
