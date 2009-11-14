@@ -1,4 +1,9 @@
 class AppointmentsController < ApplicationController
+  
+  def index
+    
+  end
+  
   def new
     @appointment = Appointment.new
   end
@@ -11,4 +16,5 @@ class AppointmentsController < ApplicationController
       render :action => :new
     end  
   end
+  
 end  
