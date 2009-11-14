@@ -17,4 +17,4 @@ namespace :crontab do
     run "cd #{release_path} && whenever --set environment=#{rails_env} --update-crontab #{application}-#{rails_env}-#{branch}"
   end
 end
-after "deploy:symlink", "crontab:install"
+# after "deploy:symlink", "crontab:install"
