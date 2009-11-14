@@ -5,8 +5,16 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>C-SNIP</title>
+  <%= stylesheet_link_tag 'screen', :media => 'screen' %>
 </head>
 <body>
+  <div id="login">
+    <% if logged_in? -%>
+      <%= link_to 'Logout', logout_path -%>
+    <% else -%>
+      <%= link_to 'Login', login_path -%>
+    <% end -%>
+  </div>
   <%= yield %>
   <div id="footer">
     &copy; 2009 (C-SNIP) Community Spay/Neuter Initiative Partnership

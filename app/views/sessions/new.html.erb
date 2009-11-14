@@ -1,3 +1,4 @@
+<%= flash_div :error, :warning, :notice %>
 <h1>Log In</h1>
 
 <% form_tag session_path do -%>
@@ -7,10 +8,10 @@
 <p><%= label_tag 'password' %><br/>
 <%= password_field_tag 'password', nil %></p>
 
-<!-- Uncomment this if you want this functionality
 <p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
+  <%= check_box_tag 'remember_me', '1', @remember_me %></p>
 
 <p><%= submit_tag 'Log in' %></p>
 <% end -%>
+
+<%= link_to 'Cancel', '/' %>

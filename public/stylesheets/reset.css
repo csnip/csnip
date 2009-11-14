@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 100%;
+  vertical-align: baseline;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: arial, sans-serif;
+  line-height: 1;
+  background: #fff;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+abbr {
+  border: none;
+}
+
+.clear {
+  clear: both;
+}
+
+a img {
+  border: 0;
+}
