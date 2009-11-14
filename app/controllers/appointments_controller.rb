@@ -8,6 +8,13 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def show
+    unless @appointment = Appointment.find_by_id(params[:id])
+      flash[:warning] = "That appointment was not found"
+      redirect_to :action => 'index'
+    end
+  end
+
   def new
     @appointment = Appointment.new
   end

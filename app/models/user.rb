@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  
+  before_create :first_user_becomes_admin
+  before_destroy :one_admin_must_remain
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -48,7 +49,19 @@ class User < ActiveRecord::Base
   end
 
   protected
-    
 
+  def first_user_becomes_admin
+    self.admin = true if self.class.count == 0
+    true
+  end
 
+  def one_admin_must_remain
+    return true unless self.admin?
+    remaining_admin_count = self.class.count(:conditions => ['admin = ? AND id != ?', true, self.id])
+    if remaining_admin_count.zero?
+      self.errors.add_to_base("Must not delete the last admin")
+      return false
+    end
+    true
+  end
 end

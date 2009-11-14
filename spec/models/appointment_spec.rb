@@ -19,11 +19,11 @@ describe Appointment, "being valid" do
     appt.should_not be_valid
     appt.should have(1).error_on(:phone)
   end
-
-  it "requires alternate phone number" do
-    appt = Appointment.new(:alternate_phone => nil)
+  
+  it "requires pet name" do
+    appt = Appointment.new(:pet_name => nil)
     appt.should_not be_valid
-    appt.should have(1).error_on(:alternate_phone)
+    appt.should have(1).error_on(:pet_name)
   end
 
   it "requires cat or dog" do
