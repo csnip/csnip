@@ -6,6 +6,8 @@
       <th>Name</th>
       <th>Phone</th>
       <th>Pet</th>
+      <th>Vaccinated?</th>
+      <th>Pregnant?</th>
       <th>Surgery?</th>
       <th>Health?</th>
       <th>Meds?</th>
@@ -21,6 +23,8 @@
           <%= appointment.alternate_phone %>
         </td>
         <td><%= appointment.cat_or_dog %>/<%= appointment.gender %>: <%= appointment.pet_name %> </td>
+        <td><%= appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %> </td>
+        <td><%= appointment.pregnant?   ? content_tag(:strong, "Yes") : "No" %> </td>
         <td><%= link_to_if(appointment.surgeries, "Yes", appointment, :anchor => 'surgeries',
                            :title => h(appointment.surgeries_explanation)) {|_| "No" } %> </td>
         <td><%= link_to_if(appointment.health_concerns, "Yes", appointment, :anchor => 'health_concerns',

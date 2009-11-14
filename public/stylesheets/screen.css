@@ -10,6 +10,11 @@ p { margin-top: 0.5em; }
 label { display: inline-block; width: 150px; text-align: right; padding-right: 0.5em; }
 input[type="submit"] { margin-left: 150px; }
 
+.half { width: 48%; }
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
 /* flash */
 
 div.flash {

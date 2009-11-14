@@ -1,0 +1,95 @@
+<h1>Appointment</h1>
+
+<table class="single_record">
+  <tbody>
+    <tr>
+      <th>Name</th><td><%= @appointment.name %> </td>
+    </tr>
+    <tr>
+      <th>Phone</th><td><%= @appointment.phone %> </td>
+    </tr>
+    <tr>
+      <th>Alt.Phone</th><td><%= @appointment.alternate_phone %> </td>
+    </tr>
+    <tr>
+      <th>Appt.Created</th><td><%= @appointment.updated_at || @appointment.created_at %> </td>
+    </tr>
+    <tr>
+      <th>Pet</th><td><%= @appointment.pet_name %> </td>
+    </tr>
+    <tr>
+      <th>Type</th><td><%= @appointment.cat_or_dog %> </td>
+    </tr>
+    <tr>
+      <th>Gender</th><td><%= @appointment.gender %> </td>
+    </tr>
+    <tr>
+      <th>Breed</th><td><%= @appointment.breed %> </td>
+    </tr>
+    <tr>
+      <th>Color</th><td><%= @appointment.color %> </td>
+    </tr>
+    <tr>
+      <th>Hair Length</th><td><%= @appointment.hair_length %> </td>
+    </tr>
+    <tr>
+      <th>Vaccinated?</th><td><%= @appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %> </td>
+    </tr>
+    <tr>
+      <th>Pregnant?</th>  <td><%= @appointment.pregnant?   ? content_tag(:strong, "Yes") : "No" %> </td>
+    </tr>
+    <tr>
+      <th>Surgery?</th>   <td><%= @appointment.surgeries?  ? "Yes" : "No" %> </td>
+    </tr>
+    <% if @appointment.surgeries? -%>
+      <tr>
+        <th>&nbsp;</th>   <td><%=h @appointment.surgeries_explanation %> </td>
+      </tr>
+    <% end -%>
+    <tr>
+      <th>Health Concerns?</th><td><%= @appointment.health_concerns? ? "Yes" : "No" %> </td>
+    </tr>
+    <% if @appointment.health_concerns? -%>
+      <tr>
+        <th>&nbsp;</th>   <td><%=h @appointment.health_concerns_explanation %> </td>
+      </tr>
+    <% end -%>
+    <tr>
+      <th>Medications?</th><td><%= @appointment.medications? ? "Yes" : "No" %> </td>
+    </tr>
+    <% if @appointment.medications? -%>
+      <tr>
+        <th>&nbsp;</th>   <td><%=h @appointment.medications_explanation %> </td>
+      </tr>
+    <% end -%>
+    </tr>
+  </tbody>
+</table>
+<!-- 
+    t.string   "street"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "county"
+
+    t.boolean  "pet_goes_outside"
+    t.string   "weight"
+    t.string   "age"
+    t.string   "date_of_birth"
+    t.string   "owned_for"
+
+    t.boolean  "vaccinated"
+    t.boolean  "visited_vet"
+    t.string   "vet_name"
+    t.boolean  "pregnant"
+    t.boolean  "in_heat"
+    t.string   "in_heat_when"
+    t.boolean  "nursing"
+    t.string   "had_litter_when"
+
+    t.integer  "testicle_count"
+
+    t.boolean  "want_chip_implant"
+    t.boolean  "want_rabies_vaccination"
+
+    t.text     "comments"
+ -->
