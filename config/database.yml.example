@@ -1,0 +1,17 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: csnip_development
+  pool: 5
+  username: root
+  password:
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: csnip_test
+  pool: 5
+  username: root
+  password:
