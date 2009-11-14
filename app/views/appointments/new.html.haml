@@ -1,5 +1,4 @@
-.error
-  Please fill out the required fields
+= error_messages_for :appointment
 %fieldset
   - form_for @appointment, :html => {:class => "bp"} do |form|
     .user_info
@@ -59,7 +58,7 @@
         %p
           %label Gender:
           %br
-          = radio_button_tag :gender, :male 
+          = radio_button_tag :gender, :male
           = label_tag "gender_male", "Male"
           %br
           = radio_button_tag :gender, :female
@@ -151,11 +150,11 @@
           Please list any surgeries you pet has undergone:
           = form.text_area :surgeries_explanation
 
-        %p              
+        %p
           Please list any health concerns you pet has:
           = form.text_area :health_concerns
 
-        %p              
+        %p
           Please list any medications you pet is on:
           = form.text_area :medications_explanation
     .finished
