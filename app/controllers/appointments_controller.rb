@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(params[:appointment])
     if @appointment.save
-
+      flash[:notice] = "Your appointment has been saved."
     else
       render :action => :new
     end
