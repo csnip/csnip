@@ -7,6 +7,7 @@
   <title>C-SNIP</title>
   <%= stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection' %>
   <%= stylesheet_link_tag 'compiled/print.css', :media => 'print' %>
+  <% stylesheet_link_tag 'screen', :media => 'screen' %>
 
   <!--[if lte IE 6]>
     <%= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection' %>
@@ -14,6 +15,14 @@
 </head>
 <body class="bp">
   <div id="container" class="">
+  <div id="login">
+    <% if logged_in? -%>
+      <%= link_to 'Logout', logout_path -%>
+    <% else -%>
+      <%= link_to 'Login', login_path -%>
+    <% end -%>
+  </div>
+  <%= flash_div :error, :warning, :notice %>
     <%= yield %>
     <div id="footer">
       &copy; 2009 (C-SNIP) Community Spay/Neuter Initiative Partnership

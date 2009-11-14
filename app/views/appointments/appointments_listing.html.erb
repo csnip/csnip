@@ -1,0 +1,34 @@
+<h1>Appointments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Pet</th>
+      <th>Surgery?</th>
+      <th>Health?</th>
+      <th>Meds?</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appointments.each do |appointment| -%>
+      <tr>
+        <td><%= appointment.name %> </td>
+        <td>
+          <%= appointment.phone %><br />
+          <%= appointment.alternate_phone %>
+        </td>
+        <td><%= appointment.cat_or_dog %>/<%= appointment.gender %>: <%= appointment.pet_name %> </td>
+        <td><%= link_to_if(appointment.surgeries, "Yes", appointment, :anchor => 'surgeries',
+                           :title => h(appointment.surgeries_explanation)) {|_| "No" } %> </td>
+        <td><%= link_to_if(appointment.health_concerns, "Yes", appointment, :anchor => 'health_concerns',
+                           :title => h(appointment.health_concerns_explanation)) {|_| "No" } %> </td>
+        <td><%= link_to_if(appointment.medications, "Yes", appointment, :anchor => 'medications',
+                           :title => h(appointment.medications_explanation)) {|_| "No" } %> </td>
+        <td><%= link_to 'Show', appointment %> </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
