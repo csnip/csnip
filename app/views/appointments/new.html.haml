@@ -1,0 +1,148 @@
+.error
+  Please fill out the required fields
+%fieldset
+  - form_for @appointment, :html => {:class => "bp"} do |form|
+    .user_info
+      %fieldset
+        %legend Contact Information
+        %p
+          = form.label :first_name
+          %br
+          = form.text_field :first_name
+        %p
+          = form.label :last_name
+          %br
+          = form.text_field :last_name
+        %p
+          = form.label :phone
+          %br
+          = form.text_field :phone
+        %p
+          = form.label :alternate_phone
+          %br
+          = form.text_field :alternate_phone
+    .address_container
+      %fieldset
+        %legend Address
+        %p.street
+          = form.label :street
+          %br
+          = form.text_field :street
+        %p
+          = form.label :city
+          %br
+          = form.text_field :city
+        %p
+          = form.label :postal_code
+          %br
+          = form.text_field :postal_code
+        %p
+          = form.label :county
+          %br
+          = form.text_field :county
+    .pet_information
+      %fieldset
+        %legend Basic Pet Information
+        %p
+          = form.label :pet_name
+          %br
+          = form.text_field :pet_name
+        %p
+          %label What type of animal is it:
+          %br
+          = form.radio_button :cat_or_dog, :dog
+          = label_tag :appointment_cat_or_dog_dog, "Dog"
+          %br
+          = form.radio_button :cat_or_dog, :cat
+          = label_tag "appointment_cat_or_dog_cat", "Cat"
+          %br
+        %p
+          %label Gender:
+          %br
+          = radio_button_tag :gender, :male 
+          = label_tag "gender_male", "Male"
+          %br
+          = radio_button_tag :gender, :female
+          = label_tag "gender_female", "Female"
+          %br    
+        %p
+          = form.label :age
+          %br
+          = form.text_field :age
+        %p
+          = form.label :breed
+          %br
+          = form.text_field :breed
+        %p
+          = form.label :color
+          %br
+          = form.text_field :color
+        %p
+          = form.label :hair_length
+          %br
+          = form.text_field :hair_length
+    .pet_history
+      %fieldset
+        %legend Pet History
+        %p
+          = form.label :owned_for, "How long have you owned the pet"
+          %br
+          = form.text_field :owned_for
+        %p
+          = form.check_box :vaccinated
+          = form.label :pet_goes_outside, "Is your pet vaccinated?"
+        
+        %p
+          = form.check_box :pet_goes_outside
+          = form.label :pet_goes_outside, "Does the pet go outside?"
+
+        %p              
+          Please list any surgeries you pet has undergone:
+          = form.text_area :surgeries_explanation
+
+        %p              
+          Please list any health concerns you pet has:
+          = form.text_area :health_concerns
+
+        %p              
+          Please list any medications you pet is on:
+          = form.text_area :medications_explanation
+
+  /   .first
+  /     = form.label :visited_vet
+  /     = form.text_field :visited_vet
+  /   .second
+  /     = form.label :vet_name
+  /     = form.text_field :vet_name
+  /   .first
+  /     = form.label :pregnant
+  /     = form.text_field :pregnant
+  /   .second
+  /     = form.label :in_heat
+  /     = form.text_field :in_heat
+  /   .first
+  /     = form.label :in_heat_when
+  /     = form.text_field :in_heat_when
+  /   .second
+  /     = form.label :had_litter_when
+  /     = form.text_field :had_litter_when
+  /   .first
+  /     = form.label :nursing
+  /     = form.text_field :nursing
+  /   .second
+  /     = form.label :testicle_count
+  /     = form.text_field :testicle_count
+  /   .first
+  /     = form.label :weight
+  /     = form.text_field :weight
+  /   .second
+  /     = form.label :date_of_birth
+  /     = form.text_field :date_of_birth
+  /   .first
+  /     = form.label :want_chip_implant
+  /     = form.text_field :want_chip_implant
+  /   .second
+  /     = form.label :want_rabies_vaccination
+  /     = form.text_field :want_rabies_vaccination
+  /   .first
+  /     = form.submit "Submit"

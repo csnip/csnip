@@ -1,0 +1,56 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset.sass
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base.sass
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+// Import the non-default scaffolding module.
+@import blueprint/modules/scaffolding.sass
+// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
+// +blueprint
+
+//Recommended Blueprint configuration with scoping and semantic layout:
++blueprint-typography("body.bp")
++blueprint-scaffolding("body.bp")
+
+!blueprint_grid_columns = 24
+!field_set_width = (!blueprint_grid_columns - 4)
+!label_width = 2
+
+body.bp
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+form.bp
+  +blueprint-form
+  
+  textarea 
+    height: 70px
+    width: 315px
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+
+#container
+  +container
+    
+#header, #footer
+  +column(!blueprint_grid_columns)
+
+.user_info
+  +column(!blueprint_grid_columns / 2)
+
+.pet_history, .address_container
+  +prepend(1)
+  +column(10, true)
+
+.pet_information
+  +column(!blueprint_grid_columns / 2)
+
+/ .postal
+/   +column(3, false)
+/   +append(1)
+/ 
+/ .county
+/   +column(2, true)
