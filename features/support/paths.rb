@@ -10,7 +10,9 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
-    
+    when /^the new intake\/consent form$/
+      new_appointment_path
+
     # Add more mappings here.
     # Here is a more fancy example:
     #

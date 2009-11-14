@@ -1,0 +1,13 @@
+<% form_for @appointment do |form| %>
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+  <%= form.label :phone %>
+  <%= form.text_field :phone %>
+  <%= form.label :alternate_phone %>
+  <%= form.text_field :alternate_phone %>
+  <%= form.label :pet_name %>
+  <%= form.text_field :pet_name %>
+  <%= form.submit "Submit" %>
+<% end %>  
