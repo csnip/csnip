@@ -1,7 +1,7 @@
 default_run_options[:pty] = true
 
 set :application, 'csnip'
-set :server 'csnip-appt.org'
+set :server, 'csnip-appt.org'
 
 set :rails_env, :production
 
