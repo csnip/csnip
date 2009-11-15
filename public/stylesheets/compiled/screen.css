@@ -317,7 +317,7 @@ body.bp .bottom {
   padding-bottom: 0; }
 /* line 7, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_debug.sass */
 body.bp .showgrid {
-  background: url('/images/grid.png?1258228731'); }
+  background: url('/images/grid.png?1258207069'); }
 /* line 5, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_interaction.sass */
 body.bp .error {
   padding: .8em;
@@ -462,45 +462,14 @@ form.simple label {
   font-weight: bold;
   padding-right: 0.5em; }
 
-/* line 58, ../../../app/stylesheets/screen.sass */
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: inline-block; }
-  /* line 62, ../../../app/stylesheets/screen.sass */
-  .fieldWithErrors label {
-    padding: 0;
-    background-color: white;
-    color: red; }
+/* line 59, ../../../app/stylesheets/screen.sass */
+#errorExplanation p {
+  font-size: 12px; }
+/* line 61, ../../../app/stylesheets/screen.sass */
+#errorExplanation li {
+  font-size: 12px; }
 
-/* line 67, ../../../app/stylesheets/screen.sass */
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0; }
-  /* line 74, ../../../app/stylesheets/screen.sass */
-  #errorExplanation h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    background-color: #c00;
-    color: #fff; }
-  /* line 82, ../../../app/stylesheets/screen.sass */
-  #errorExplanation p {
-    color: #333;
-    margin-bottom: 0;
-    padding: 5px; }
-  /* line 86, ../../../app/stylesheets/screen.sass */
-  #errorExplanation ul li {
-    font-size: 12px;
-    list-style: square; }
-
-/* line 90, ../../../app/stylesheets/screen.sass */
+/* line 63, ../../../app/stylesheets/screen.sass */
 .user_info, .pet_information, .litter_information {
   display: inline;
   float: left;
@@ -510,7 +479,7 @@ form.simple label {
   * html .user_info, * html .pet_information, * html .litter_information {
     overflow-x: hidden; }
 
-/* line 93, ../../../app/stylesheets/screen.sass */
+/* line 66, ../../../app/stylesheets/screen.sass */
 .pet_history {
   display: inline;
   float: left;
@@ -520,7 +489,7 @@ form.simple label {
   * html .pet_history {
     overflow-x: hidden; }
 
-/* line 95, ../../../app/stylesheets/screen.sass */
+/* line 68, ../../../app/stylesheets/screen.sass */
 .address_container {
   display: inline;
   float: left;
@@ -530,7 +499,7 @@ form.simple label {
   * html .address_container {
     overflow-x: hidden; }
 
-/* line 98, ../../../app/stylesheets/screen.sass */
+/* line 71, ../../../app/stylesheets/screen.sass */
 #errorExplanation, .finished {
   display: inline;
   float: left;
@@ -540,26 +509,26 @@ form.simple label {
   * html #errorExplanation, * html .finished {
     overflow-x: hidden; }
 
-/* line 101, ../../../app/stylesheets/screen.sass */
+/* line 74, ../../../app/stylesheets/screen.sass */
 .finished {
   text-align: center;
   margin-bottom: 40px; }
 
-/* line 54, ../../../app/stylesheets/screen.sass */
+/* line 78, ../../../app/stylesheets/screen.sass */
 .for_cat .dog_only {
   display: none; }
 
-/* line 57, ../../../app/stylesheets/screen.sass */
+/* line 81, ../../../app/stylesheets/screen.sass */
 .for_dog .cat_only {
   display: none; }
 
-/* line 61, ../../../app/stylesheets/screen.sass */
+/* line 85, ../../../app/stylesheets/screen.sass */
 .form-errors input {
   background: #FBE3E4 none repeat scroll 0 0 !important; }
-/* line 63, ../../../app/stylesheets/screen.sass */
+/* line 87, ../../../app/stylesheets/screen.sass */
 .form-errors label {
   color: #8A1F11; }
 
-/* line 66, ../../../app/stylesheets/screen.sass */
+/* line 90, ../../../app/stylesheets/screen.sass */
 .notes {
   color: #666; }

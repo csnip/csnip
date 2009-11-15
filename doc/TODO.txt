@@ -1,28 +1,11 @@
-
+  
 TODO: 
-
-Some of these are more important to Pat than others. Some we can finish at GiveCamp, and some we cannot.
-They are in no particular order or grouping. Whatever you decide to tackle, communicate about it so we
-don't duplicate effort.
-
-have an about page?
-- contact info
-- non-profit status
-
-show phone number prominently so that people can also call
-
-how do we integrate, if at all, with http://www.csnip.org/ ?
-skin the website to look like c-snip or add a iframe to c-snip website.
-
+  
 default page should be new appt. page instead of index?
 ** Rob: This sounds like the default page should have some of that "info" stuff from above.
 
 write specs to pull information for appointments
 ** Rob: I already added a basic listing (if you are a logged in user)
-
-consistent style
-- foot in same place on all pages
-** Rob: there were some #footer styles in the old public/stylesheets/screen.css that did this
 
 - fonts
 

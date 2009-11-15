@@ -175,9 +175,6 @@
         %p
           Please list any medications your pet is on:
           = form.text_area :medications_explanation
-    %fieldset.clear
-      %h3 Please read the following certification before sending your request:
-      = render :partial => 'certification'
-
+          
     %fieldset.finished
       = form.submit "I'm Done, send the request to C-SNIP"
