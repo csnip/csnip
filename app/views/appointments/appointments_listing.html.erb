@@ -9,16 +9,16 @@
       <%= label_tag "Zip Code" %>
       <%= text_field_tag :postal_code, nil, :size => 10, :max_length => 10 %>
       <div class="booleans">
-        <%= radio_button_tag :cat_or_dog, :cat %>
         <%= label_tag "Cat" %>
-        <%= radio_button_tag :cat_or_dog, :dog %>
+        <%= radio_button_tag :cat_or_dog, :cat %>
         <%= label_tag "Dog" %>
-        <%= check_box_tag :visited_vet %>
+        <%= radio_button_tag :cat_or_dog, :dog %>
         <%= label_tag "Visited vet" %>
-        <%= check_box_tag :vaccinated %>
+        <%= check_box_tag :visited_vet %>
         <%= label_tag "Vaccinated" %>
-      </div>  
-      <%= submit_tag :search  %>
+        <%= check_box_tag :vaccinated %>
+      </div>
+      <%= submit_tag :search, :class => "button"  %>
     <% end %>
   </div>  
   <% if @appointments.blank? %>
