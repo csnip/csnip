@@ -23,18 +23,69 @@ body.bp
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 form.bp
   +blueprint-form
-  
-  textarea 
+
+  textarea
     height: 70px
     width: 250px
+
+  .required
+    > label:after
+      content: "*"
+      font-weight: bolder
+      color: red
+    input[type="radio"] + label:after
+      content: ""
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 
 #container
   +container
-    
+
 #header, #footer
   +column(!blueprint_grid_columns)
+
+#login_link
+  float: right
+
+form.simple
+  label
+    display: inline-block
+    width: 150px
+    text-align: right
+    font-weight: bold
+    padding-right: 0.5em
+
+.fieldWithErrors
+  padding: 2px
+  background-color: red
+  display: inline-block
+  label
+    padding: 0
+    background-color: white
+    color: red
+
+#errorExplanation
+  width: 400px
+  border: 2px solid red
+  padding: 7px
+  padding-bottom: 12px
+  margin-bottom: 20px
+  background-color: #f0f0f0
+  h2
+    text-align: left
+    font-weight: bold
+    padding: 5px 5px 5px 15px
+    font-size: 12px
+    margin: -7px
+    background-color: #c00
+    color: #fff
+  p
+    color: #333
+    margin-bottom: 0
+    padding: 5px
+  ul li
+    font-size: 12px
+    list-style: square
 
 .user_info, .pet_information, .litter_information
   +column(!blueprint_grid_columns / 2)

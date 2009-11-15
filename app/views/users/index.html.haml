@@ -13,7 +13,7 @@
   %tbody
     - @users.each do |user|
       %tr
-        %td= user.login
+        %td= link_to user.login, user_path(user)
         %td= user.name
         %td= user.email
         %td= (user.admin? ? "Yes" : "No")

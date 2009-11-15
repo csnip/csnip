@@ -2,9 +2,14 @@
 - if @user.errors[:base]
   .error= @user.errors[:base]
 
+%p= link_to 'Edit', edit_user_path(@user)
+
 %p
   Login:
   = @user.login
+%p
+  Name:
+  = @user.name
 %p
   Email:
   = @user.email

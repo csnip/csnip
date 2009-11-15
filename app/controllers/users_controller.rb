@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_filter :login_required, :except => [:new]
 
   def authorized?(action = action_name, resource = nil)
-    User.count == 0 || (logged_in? && current_user.admin?)
+    logged_in? ? current_user.admin? : User.count == 0
   end
 
   def index
@@ -35,6 +36,32 @@ class UsersController < ApplicationController
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
       render :action => 'new'
+    end
+  end
+
+  def edit
+    @user = User.find_by_id(params[:id])
+    if @user.nil?
+      flash[:error] = 'No user found'
+      redirect_to :action => 'index'
+      return
+    end
+  end
+
+  def update
+    @user = User.find_by_id(params[:id])
+    if @user.nil?
+      flash[:error] = 'No user found'
+      redirect_to :action => 'index'
+      return
+    end
+
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "User updated successfully"
+      redirect_to users_path
+    else
+      flash[:error]  = "Unable to modify user."
+      render :action => 'edit'
     end
   end
 

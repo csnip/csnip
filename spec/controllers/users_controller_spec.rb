@@ -10,9 +10,6 @@ describe UsersController do
     end.should change(User, :count).by(1)
   end
 
-
-
-
   it 'requires login on signup' do
     lambda do
       create_user(:login => nil)
@@ -152,6 +149,18 @@ describe UsersController do
     it "should route edit_user_path(:id => '1') to /users/1/edit" do
       edit_user_path(:id => '1').should == "/users/1/edit"
     end
+  end
+
+  describe "new user" do
+    it "should render new on GET"
+    it "should redirect to list on successful POST"
+    it "should render new on failed POST"
+  end
+
+  describe "edit user" do
+    it "should render edit on GET"
+    it "should redirect to list on successful POST"
+    it "should render edit on failed POST"
   end
 
 end

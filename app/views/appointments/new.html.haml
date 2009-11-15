@@ -1,22 +1,25 @@
+%h1 Request an Appointment for your Pet
+
 = error_messages_for :appointment, :class => "error"
+
 %fieldset
   - form_for @appointment, :html => {:class => "bp"} do |form|
     .user_info
       %fieldset
         %legend Contact Information
-        %p
+        %p.required
           = form.label :first_name
           %br
           = form.text_field :first_name
-        %p
+        %p.required
           = form.label :last_name
           %br
           = form.text_field :last_name
-        %p
+        %p.required
           = form.label :phone
           %br
           = form.text_field :phone
-        %p
+        %p.required
           = form.label :alternate_phone
           %br
           = form.text_field :alternate_phone
@@ -39,14 +42,14 @@
           = form.label :county
           %br
           = form.text_field :county
-    .pet_information
+    .pet_information.clear
       %fieldset
         %legend Basic Pet Information
-        %p
+        %p.required
           = form.label :pet_name, "Name"
           %br
           = form.text_field :pet_name
-        %p
+        %p.required
           %label Your pet is a:
           %br
           = form.radio_button :cat_or_dog, :dog, :onclick => "$('#new_appointment').removeClass('for_cat').addClass('for_dog')"
@@ -55,7 +58,7 @@
           = form.radio_button :cat_or_dog, :cat
           = form.label :cat_or_dog, "Cat", :value => "cat", :onclick => "$('#new_appointment').removeClass('for_dog').addClass('for_cat')"
           %br
-        %p
+        %p.required
           %label Gender:
           %br
           = form.radio_button :gender, :male
@@ -63,11 +66,11 @@
           %br
           = form.radio_button :gender, :female
           = form.label :gender, "Female", :value => "female"
-          %br    
+          %br
           = form.radio_button :gender, :not_sure
           = form.label :gender, "Not sure", :value => "not_sure"
-          
-        %p
+
+        %p.required
           = form.label :age
           %br
           = form.text_field :age
@@ -86,12 +89,12 @@
         %p
           = form.check_box :want_chip_implant
           = form.label :want_chip_implant, "Would you like a chip implant?"
-          
+
         %p
           = form.check_box :want_rabies_vaccination
           = form.label :want_rabies_vaccination, "Would you like a rabies vaccination?"
-            
-        
+
+
         %p.dog_only
           = form.label :breed
           %br
@@ -113,10 +116,10 @@
           = form.label :hair_length, "Long", :value => "long"
           
         %p
-          Please list any other information you have: 
+          Please list any other information you have:
           %br
           = form.text_area :comments
-      
+
     .pet_history
       %fieldset
         %legend Pet History
@@ -137,31 +140,31 @@
           = form.label :vet_name, "Veterinarian name"
           %br
           = form.text_field :vet_name
-                  
+
       %fieldset
         %legend Litter/Pregnancy Information
         %p
           %label Is your pet pregnant?
           %br
-          = radio_button_tag :pregnant, :yes 
+          = radio_button_tag :pregnant, :yes
           = label_tag "pregnant_yes", "Yes"
           %br
           = radio_button_tag :pregnant, :no
           = label_tag "pregnant_no", "No"
-          %br    
+          %br
           = radio_button_tag :pregnant, :not_sure
           = label_tag "pregnant_not_sure", "Not Sure"
-          
+
         %p
           = form.label :had_litter_when, "Has your pet had a litter?  If so, when?"
           %br
           = form.text_field :had_litter_when
-      
+
         %p.dog_only
           = form.check_box :in_heat
           = form.label :in_heat, "Is your pet in heat?"
-      
-        %p              
+
+        %p
           Please list any surgeries your pet has undergone:
           = form.text_area :surgeries_explanation
 
@@ -172,6 +175,9 @@
         %p
           Please list any medications your pet is on:
           = form.text_area :medications_explanation
-    .finished
-      %fieldset
-        = form.submit "I'm Done, send the request to C-SNIP"
+    %fieldset.clear
+      %h3 Please read the following certification before sending your request:
+      = render :partial => 'certification'
+
+    %fieldset.finished
+      = form.submit "I'm Done, send the request to C-SNIP"

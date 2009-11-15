@@ -2,26 +2,9 @@
 <% @user.password = @user.password_confirmation = nil %>
 
 <%= error_messages_for :user %>
-<% form_for :user, :url => users_path do |form| -%>
-<p>
-  <%= form.label :login %>
-  <%= form.text_field :login %>
-</p>
-<p>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-</p>
-<p>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-</p>
-<p>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-</p>
-<p>
-  <%= form.label :password_confirmation, 'Confirm Password' %>
-  <%= form.password_field :password_confirmation %>
-</p>
+<% form_for :user, :url => users_path, :html => { :class => 'simple' } do |form| -%>
+  <%= render :partial => 'form', :object => form %>
 <p><%= form.submit 'Sign up' %></p>
 <% end -%>
+
+<%= link_to 'Cancel', users_path %>

@@ -317,7 +317,7 @@ body.bp .bottom {
   padding-bottom: 0; }
 /* line 7, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_debug.sass */
 body.bp .showgrid {
-  background: url('/images/grid.png?1258207069'); }
+  background: url('/images/grid.png?1258228731'); }
 /* line 5, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_interaction.sass */
 body.bp .error {
   padding: .8em;
@@ -421,8 +421,16 @@ form.bp textarea {
 form.bp textarea {
   height: 70px;
   width: 250px; }
+/* line 32, ../../../app/stylesheets/screen.sass */
+form.bp .required > label:after {
+  content: "*";
+  font-weight: bolder;
+  color: red; }
+/* line 36, ../../../app/stylesheets/screen.sass */
+form.bp .required input[type="radio"] + label:after {
+  content: ""; }
 
-/* line 33, ../../../app/stylesheets/screen.sass */
+/* line 41, ../../../app/stylesheets/screen.sass */
 #container {
   width: 950px;
   margin: 0 auto;
@@ -432,7 +440,7 @@ form.bp textarea {
   #container {
     display: block; }
 
-/* line 36, ../../../app/stylesheets/screen.sass */
+/* line 44, ../../../app/stylesheets/screen.sass */
 #header, #footer {
   display: inline;
   float: left;
@@ -442,7 +450,57 @@ form.bp textarea {
   * html #header, * html #footer {
     overflow-x: hidden; }
 
-/* line 39, ../../../app/stylesheets/screen.sass */
+/* line 47, ../../../app/stylesheets/screen.sass */
+#login_link {
+  float: right; }
+
+/* line 51, ../../../app/stylesheets/screen.sass */
+form.simple label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 0.5em; }
+
+/* line 58, ../../../app/stylesheets/screen.sass */
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: inline-block; }
+  /* line 62, ../../../app/stylesheets/screen.sass */
+  .fieldWithErrors label {
+    padding: 0;
+    background-color: white;
+    color: red; }
+
+/* line 67, ../../../app/stylesheets/screen.sass */
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+  /* line 74, ../../../app/stylesheets/screen.sass */
+  #errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #c00;
+    color: #fff; }
+  /* line 82, ../../../app/stylesheets/screen.sass */
+  #errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px; }
+  /* line 86, ../../../app/stylesheets/screen.sass */
+  #errorExplanation ul li {
+    font-size: 12px;
+    list-style: square; }
+
+/* line 90, ../../../app/stylesheets/screen.sass */
 .user_info, .pet_information, .litter_information {
   display: inline;
   float: left;
@@ -452,7 +510,7 @@ form.bp textarea {
   * html .user_info, * html .pet_information, * html .litter_information {
     overflow-x: hidden; }
 
-/* line 42, ../../../app/stylesheets/screen.sass */
+/* line 93, ../../../app/stylesheets/screen.sass */
 .pet_history {
   display: inline;
   float: left;
@@ -462,7 +520,7 @@ form.bp textarea {
   * html .pet_history {
     overflow-x: hidden; }
 
-/* line 44, ../../../app/stylesheets/screen.sass */
+/* line 95, ../../../app/stylesheets/screen.sass */
 .address_container {
   display: inline;
   float: left;
@@ -472,7 +530,7 @@ form.bp textarea {
   * html .address_container {
     overflow-x: hidden; }
 
-/* line 47, ../../../app/stylesheets/screen.sass */
+/* line 98, ../../../app/stylesheets/screen.sass */
 #errorExplanation, .finished {
   display: inline;
   float: left;
@@ -482,7 +540,7 @@ form.bp textarea {
   * html #errorExplanation, * html .finished {
     overflow-x: hidden; }
 
-/* line 50, ../../../app/stylesheets/screen.sass */
+/* line 101, ../../../app/stylesheets/screen.sass */
 .finished {
   text-align: center;
   margin-bottom: 40px; }

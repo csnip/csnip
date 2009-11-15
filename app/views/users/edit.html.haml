@@ -1,0 +1,9 @@
+%h1 Edit User
+- @user.password = @user.password_confirmation = nil
+
+= error_messages_for :user
+- form_for :user, :url => user_path(@user), :html => { :method => :put, :class => 'simple' } do |form|
+  = render :partial => 'form', :object => form
+  %p= form.submit 'Sign up'
+
+= link_to 'Cancel', users_path
