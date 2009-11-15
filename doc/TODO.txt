@@ -1,3 +1,7 @@
+TODO: 
+
+cleanup fieldWithErrors when the form renders with errors
+
 have an about page?
 - contact info
 - non-profit status
@@ -16,8 +20,6 @@ skin the website to look like c-snip or add a iframe to c-snip website.
 
 write specs to pull information for appointments
 
-remove Login link from new appt. page
-
 consistent style
 
-ensure new appt. form looks good when there are validation errors
+write specs to pull information for appointments 

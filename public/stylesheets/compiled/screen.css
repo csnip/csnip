@@ -500,3 +500,10 @@ form.bp textarea {
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
   * html .county {
     overflow-x: hidden; }
+
+/* line 69, ../../../app/stylesheets/screen.sass */
+.form-errors input {
+  background: #FBE3E4 none repeat scroll 0 0 !important; }
+/* line 71, ../../../app/stylesheets/screen.sass */
+.form-errors label {
+  color: #8A1F11; }

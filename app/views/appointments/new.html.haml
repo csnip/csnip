@@ -1,4 +1,4 @@
-= error_messages_for :appointment
+= error_messages_for :appointment, :class => "error"
 %fieldset
   - form_for @appointment, :html => {:class => "bp"} do |form|
     .user_info
@@ -50,22 +50,22 @@
           %label What type of animal is it:
           %br
           = form.radio_button :cat_or_dog, :dog
-          = label_tag "appointment_cat_or_dog_dog", "Dog"
+          = form.label :cat_or_dog, "Dog", :value => "dog"
           %br
           = form.radio_button :cat_or_dog, :cat
-          = label_tag "appointment_cat_or_dog_cat", "Cat"
+          = form.label :cat_or_dog, "Cat", :value => "cat"
           %br
         %p
           %label Gender:
           %br
           = form.radio_button :gender, :male
-          = label_tag "appointment_gender_male", "Male"
+          = form.label :gender, "Male", :value => "male"
           %br
           = form.radio_button :gender, :female
-          = label_tag "appointment_gender_female", "Female"
+          = form.label :gender, "Female", :value => "female"
           %br    
           = form.radio_button :gender, :not_sure
-          = label_tag "appointment_gender_not_sure", "Not Sure"
+          = form.label :gender, "Not sure", :value => "not_sure"
           
         %p
           = form.label :age

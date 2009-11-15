@@ -15,14 +15,7 @@
 </head>
 <body class="bp">
   <div id="container" class="">
-  <div id="login">
-    <% if logged_in? -%>
-      <%= link_to 'Logout', logout_path -%>
-    <% else -%>
-      <%= link_to 'Login', login_path -%>
-    <% end -%>
-  </div>
-  <%= flash_div :error, :warning, :notice %>
+    <%= flash_div :error, :warning, :notice %>
     <%= yield %>
     <div id="footer">
       &copy; 2009 (C-SNIP) Community Spay/Neuter Initiative Partnership
