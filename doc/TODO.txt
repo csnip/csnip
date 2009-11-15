@@ -1,3 +1,8 @@
+Some of these are more important to Pat than others. Some we can finish at GiveCamp, and some we cannot.
+They are in no particular order or grouping. Whatever you decide to tackle, communicate about it so we
+don't duplicate effort.
+=============
+
 have an about page?
 - contact info
 - non-profit status
@@ -31,3 +36,16 @@ set up users in app (see Pat for who needs an account)
 ability to maintain users
 - add/remove
 - enable/disable?
+
+store years owned and months owned instead of a free text value
+- will allow future mining of ownership data
+
+hair length could be presented as a radio button group for Short, Medium, Long
+
+only collect veterinarian name instead of also asking if your pet has visited a vet.
+
+allow a person to enter their contact info only once but enter info for multiple pets
+- need to extract a pet model
+- appt. has many pets, pet belongs to appointment
+- appt. accepts nested attributes for pets
+- if a person adds too many sections for pets, he should be able to remove them
