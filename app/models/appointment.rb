@@ -23,4 +23,31 @@ class Appointment < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+  
+  def self.search(params)
+    conditions = []
+    terms = []
+    if params[:last_name].present?
+      conditions << "last_name like ?"
+      terms.push("%#{params[:last_name]}%")
+    end
+
+    if params[:postal_code].present?
+      conditions << "postal_code = ?"
+      terms.push(params[:postal_code])
+    end    
+
+    if params[:county].present?
+      conditions << "county like ?"
+      terms.push("%#{params[:county]}%")
+    end    
+
+    if params[:cat_or_dog].present?
+      conditions << "cat_or_dog = ?"
+      terms.push("#{params[:cat_or_dog]}")
+    end    
+
+    conditions = [conditions.join(' AND ')].push(terms).flatten
+    paginate(:conditions => conditions, :page => params[:page], :order => 'created_at DESC')
+  end  
 end

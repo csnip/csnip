@@ -27,5 +27,11 @@ class AppointmentsController < ApplicationController
       render :action => :new
     end
   end
-
+  
+  def search
+    if logged_in?
+      @appointments = Appointment.search(params)
+      render 'appointments_listing'
+    end  
+  end
 end
