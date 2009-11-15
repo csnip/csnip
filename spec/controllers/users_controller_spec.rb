@@ -3,6 +3,10 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe UsersController do
   fixtures :users
 
+  before do
+    login_as :admin
+  end
+
   it 'allows signup' do
     lambda do
       create_user
@@ -41,8 +45,6 @@ describe UsersController do
       response.should be_success
     end.should_not change(User, :count)
   end
-
-
 
   def create_user(options = {})
     post :create, :user => { :login => 'quire', :email => 'quire@example.com',
