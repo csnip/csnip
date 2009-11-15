@@ -7,4 +7,8 @@ class Appointment < ActiveRecord::Base
     name << ", #{self.first_name}" unless self.first_name.blank?
     name
   end
+  
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
