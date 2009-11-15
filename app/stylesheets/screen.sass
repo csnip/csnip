@@ -19,6 +19,7 @@ body.bp
   +blueprint-utilities
   +blueprint-debug
   +blueprint-interaction
+  background: #0F6CA3 none repeat scroll 0 0
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 form.bp
@@ -40,9 +41,12 @@ form.bp
 
 #container
   +container
+  background-color: white
 
-#header, #footer
-  +column(!blueprint_grid_columns)
+#header
+  +column(24, true)
+  height: 180px
+  
 
 #login_link
   float: right
@@ -60,16 +64,24 @@ form.simple
     font-size: 12px
   li
     font-size: 12px
+
 .user_info, .pet_information, .litter_information
   +column(!blueprint_grid_columns / 2)
+  +prepend(2)
 
 .pet_history
   +column((!blueprint_grid_columns / 2), true)
 .address_container
   +column(!blueprint_grid_columns / 2, true)
 
-#errorExplanation, .finished
+#errorExplanationContainer
+  +column((!blueprint_grid_columns - 2), true)
+  +prepend(2)
+  padding: 0
+
+.finished, .request
   +column((!blueprint_grid_columns), true)
+  +prepend(2)
 
 .finished  
   text-align: center

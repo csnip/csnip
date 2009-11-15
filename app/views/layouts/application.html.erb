@@ -14,7 +14,11 @@
   <![endif]-->
 </head>
 <body class="bp">
-  <div id="container" class="">
+  <div id="container">
+    <div id="header">
+      <iframe src="http://csnip.org/csnip-app-header.html" width="100%" scrolling="no" height="200px"></iframe>
+    </div>
+      
     <%= flash_div :error, :warning, :notice %>
     <%= yield %>
   </div>
