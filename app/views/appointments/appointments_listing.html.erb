@@ -7,15 +7,17 @@
       <%= label_tag "County:" %>
       <%= text_field_tag :county %>
       <%= label_tag "Zip Code" %>
-      <%= text_field_tag :postal_code %>
-      <%= radio_button_tag :cat_or_dog, :cat %>
-      <%= label_tag "Cat" %>
-      <%= radio_button_tag :cat_or_dog, :dog %>
-      <%= label_tag "Dog" %>
-      <%= check_box_tag :visited_vet %>
-      <%= label_tag "Visited vet" %>
-      <%= check_box_tag :vaccinated %>
-      <%= label_tag "Vaccinated" %>
+      <%= text_field_tag :postal_code, nil, :size => 10, :max_length => 10 %>
+      <div class="booleans">
+        <%= radio_button_tag :cat_or_dog, :cat %>
+        <%= label_tag "Cat" %>
+        <%= radio_button_tag :cat_or_dog, :dog %>
+        <%= label_tag "Dog" %>
+        <%= check_box_tag :visited_vet %>
+        <%= label_tag "Visited vet" %>
+        <%= check_box_tag :vaccinated %>
+        <%= label_tag "Vaccinated" %>
+      </div>  
       <%= submit_tag :search  %>
     <% end %>
   </div>  
