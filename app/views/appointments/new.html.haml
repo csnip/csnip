@@ -49,11 +49,11 @@
         %p
           %label Your pet is a:
           %br
-          = form.radio_button :cat_or_dog, :dog
+          = form.radio_button :cat_or_dog, :dog, :onclick => "$('#new_appointment').removeClass('for_cat').addClass('for_dog')"
           = form.label :cat_or_dog, "Dog", :value => "dog"
           %br
           = form.radio_button :cat_or_dog, :cat
-          = form.label :cat_or_dog, "Cat", :value => "cat"
+          = form.label :cat_or_dog, "Cat", :value => "cat", :onclick => "$('#new_appointment').removeClass('for_dog').addClass('for_cat')"
           %br
         %p
           %label Gender:
@@ -72,7 +72,7 @@
           %br
           = form.text_field :age
           %br
-          %span.notes Month and year or an approximation
+          %span.notes e.g., 8 years, about 2 months
         %p.dog_only
           = form.label :weight
           %br
@@ -103,7 +103,15 @@
         %p.cat_only
           = form.label :hair_length
           %br
-          = form.text_field :hair_length
+          = form.radio_button :hair_length, :short
+          = form.label :hair_length, "Short", :value => "short"
+          %br
+          = form.radio_button :hair_length, :medium
+          = form.label :hair_length, "Medium", :value => "medium"
+          %br
+          = form.radio_button :hair_length, :long
+          = form.label :hair_length, "Long", :value => "long"
+          
         %p
           Please list any other information you have: 
           %br

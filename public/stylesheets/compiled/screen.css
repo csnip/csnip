@@ -487,23 +487,21 @@ form.bp textarea {
   text-align: center;
   margin-bottom: 40px; }
 
-
-
-
-
-
-
-/* line 61, ../../../app/stylesheets/screen.sass */
+/* line 54, ../../../app/stylesheets/screen.sass */
 .for_cat .dog_only {
   display: none; }
 
-/* line 64, ../../../app/stylesheets/screen.sass */
+/* line 57, ../../../app/stylesheets/screen.sass */
 .for_dog .cat_only {
   display: none; }
 
-/* line 68, ../../../app/stylesheets/screen.sass */
+/* line 61, ../../../app/stylesheets/screen.sass */
 .form-errors input {
   background: #FBE3E4 none repeat scroll 0 0 !important; }
-/* line 70, ../../../app/stylesheets/screen.sass */
+/* line 63, ../../../app/stylesheets/screen.sass */
 .form-errors label {
   color: #8A1F11; }
+
+/* line 66, ../../../app/stylesheets/screen.sass */
+.notes {
+  color: #666; }
