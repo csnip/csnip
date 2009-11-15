@@ -1,13 +1,9 @@
-<<<<<<< HEAD
+
 TODO: 
 
-cleanup fieldWithErrors when the form renders with errors
-=======
 Some of these are more important to Pat than others. Some we can finish at GiveCamp, and some we cannot.
 They are in no particular order or grouping. Whatever you decide to tackle, communicate about it so we
 don't duplicate effort.
-=============
->>>>>>> 935ca59e5cb18495c7a69bb60dadc2629d64e3b3
 
 have an about page?
 - contact info
@@ -16,6 +12,7 @@ have an about page?
 show phone number prominently so that people can also call
 
 how do we integrate, if at all, with http://www.csnip.org/ ?
+skin the website to look like c-snip or add a iframe to c-snip website.
 
 default page should be new appt. page instead of index?
 
@@ -25,15 +22,11 @@ show cat- and dog-specific fields when clicking Cat/Dog radio buttons
 - add for_dog and for_cat class to form
 - CSS should do the rest
 
-skin the website to look like c-snip or add a iframe to c-snip website.
-
 write specs to pull information for appointments
 
 consistent style
 - foot in same place on all pages
 - fonts
-
-ensure new appt. form looks good when there are validation errors
 
 set up users in app (see Pat for who needs an account)
 
@@ -48,12 +41,11 @@ hair length could be presented as a radio button group for Short, Medium, Long
 
 only collect veterinarian name instead of also asking if your pet has visited a vet.
 
-<<<<<<< HEAD
+
 write specs to pull information for appointments 
-=======
+
 allow a person to enter their contact info only once but enter info for multiple pets
 - need to extract a pet model
 - appt. has many pets, pet belongs to appointment
 - appt. accepts nested attributes for pets
 - if a person adds too many sections for pets, he should be able to remove them
->>>>>>> 935ca59e5cb18495c7a69bb60dadc2629d64e3b3
