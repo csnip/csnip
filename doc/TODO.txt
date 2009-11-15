@@ -15,18 +15,25 @@ how do we integrate, if at all, with http://www.csnip.org/ ?
 skin the website to look like c-snip or add a iframe to c-snip website.
 
 default page should be new appt. page instead of index?
+** Rob: This sounds like the default page should have some of that "info" stuff from above.
 
 write specs to pull information for appointments
+** Rob: I already added a basic listing (if you are a logged in user)
 
 consistent style
 - foot in same place on all pages
+** Rob: there were some #footer styles in the old public/stylesheets/screen.css that did this
+
 - fonts
 
 set up users in app (see Pat for who needs an account)
+** Rob: Pat can set them up herself! Go to the /signup link and the first user created (Pat?) becomes the admin.
 
 ability to maintain users
 - add/remove
+** Rob: Yup. got that
 - enable/disable?
+** Rob:  I can get this, too, if you tell me how you'd like it to behave.
 
 write specs to pull information for appointments 
 
