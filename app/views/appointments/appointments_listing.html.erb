@@ -12,12 +12,15 @@
       <%= label_tag "Cat" %>
       <%= radio_button_tag :cat_or_dog, :dog %>
       <%= label_tag "Dog" %>
+      <%= check_box_tag :visited_vet %>
+      <%= label_tag "Visited vet" %>
+      <%= check_box_tag :vaccinated %>
+      <%= label_tag "Vaccinated" %>
       <%= submit_tag :search  %>
     <% end %>
   </div>  
   <% if @appointments.blank? %>
     <h2>There are no appointments.</h2>
-
   <% else %>  
   
       <%= will_paginate @appointments %>

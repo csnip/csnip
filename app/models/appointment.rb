@@ -45,7 +45,15 @@ class Appointment < ActiveRecord::Base
     if params[:cat_or_dog].present?
       conditions << "cat_or_dog = ?"
       terms.push("#{params[:cat_or_dog]}")
-    end    
+    end
+    
+    if params[:visited_vet].present?
+      conditions << "visited_vet = true"
+    end  
+
+    if params[:vaccinated].present?
+      conditions << "vaccinated = true"
+    end  
 
     conditions = [conditions.join(' AND ')].push(terms).flatten
     paginate(:conditions => conditions, :page => params[:page], :order => 'created_at DESC')
