@@ -320,7 +320,7 @@ body.bp {
     padding-bottom: 0; }
   /* line 7, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_debug.sass */
   body.bp .showgrid {
-    background: url('/images/grid.png?1258207069'); }
+    background: url('/images/grid.png?1258229354'); }
   /* line 5, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_interaction.sass */
   body.bp .error {
     padding: .8em;
@@ -551,3 +551,16 @@ form.simple label {
 /* line 102, ../../../app/stylesheets/screen.sass */
 .notes {
   color: #666; }
+
+/* line 105, ../../../app/stylesheets/screen.sass */
+.thanks {
+  padding-top: 1em;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 710px;
+  padding-left: 80px;
+  font-size: 1.5em; }
+  /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
+  * html .thanks {
+    overflow-x: hidden; }
