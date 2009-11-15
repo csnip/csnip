@@ -43,11 +43,11 @@
       %fieldset
         %legend Basic Pet Information
         %p
-          = form.label :pet_name
+          = form.label :pet_name, "Name"
           %br
           = form.text_field :pet_name
         %p
-          %label What type of animal is it:
+          %label Your pet is a:
           %br
           = form.radio_button :cat_or_dog, :dog
           = label_tag "appointment_cat_or_dog_dog", "Dog"
@@ -108,9 +108,11 @@
       %fieldset
         %legend Pet History
         %p
-          = form.label :owned_for, "How long have you owned the pet"
+          = form.label :owned_for, "How long have you owned your pet?"
           %br
           = form.text_field :owned_for
+          %br
+          %span.notes e.g., 1 year, about 18 months
         %p
           = form.check_box :vaccinated
           = form.label :pet_goes_outside, "Is your pet vaccinated?"
@@ -138,7 +140,7 @@
           = label_tag "pregnant_not_sure", "Not Sure"
           
         %p
-          = form.label :had_litter_when, "Has your pet had a litter?  If so when?"
+          = form.label :had_litter_when, "Has your pet had a litter?  If so, when?"
           %br
           = form.text_field :had_litter_when
       
@@ -147,15 +149,15 @@
           = form.label :in_heat, "Is your pet in heat?"
       
         %p              
-          Please list any surgeries you pet has undergone:
+          Please list any surgeries your pet has undergone:
           = form.text_area :surgeries_explanation
 
         %p
-          Please list any health concerns you pet has:
+          Please list any health concerns for your pet:
           = form.text_area :health_concerns
 
         %p
-          Please list any medications you pet is on:
+          Please list any medications your pet is on:
           = form.text_area :medications_explanation
     .finished
       Please list any other information you have: 
