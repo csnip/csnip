@@ -84,5 +84,5 @@ button {
   text-align: left; }
 
 /* line 16, ../../../app/stylesheets/ie.sass */
-.request {
+.request, #users_new, .login, #appointments_listing {
   padding-top: 2em; }

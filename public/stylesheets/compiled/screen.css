@@ -320,7 +320,7 @@ body.bp {
     padding-bottom: 0; }
   /* line 7, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_debug.sass */
   body.bp .showgrid {
-    background: url('/images/grid.png?1258207069'); }
+    background: url('/images/grid.png?1258229354'); }
   /* line 5, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_interaction.sass */
   body.bp .error {
     padding: .8em;
@@ -517,14 +517,14 @@ form.simple label {
     overflow-x: hidden; }
 
 /* line 81, ../../../app/stylesheets/screen.sass */
-.finished, .request {
+.finished, .request, #users_new, .login, #appointments_listing {
   display: inline;
   float: left;
   margin-right: 0;
   width: 710px;
   padding-left: 80px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
-  * html .finished, * html .request {
+  * html .finished, * html .request, * html #users_new, * html .login, * html #appointments_listing {
     overflow-x: hidden; }
 
 /* line 85, ../../../app/stylesheets/screen.sass */
