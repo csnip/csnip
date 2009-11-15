@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
 
   def index
     if logged_in?
-      @appointments = Appointment.all
+      @appointments = Appointment.paginate :page => params[:page], :order => 'created_at DESC'
       render 'appointments_listing'
     end
   end
