@@ -10,7 +10,9 @@ default page should be new appt. page instead of index?
 
 style a notes class
 
-add for_dog and for_cat class to form when 
+show cat- and dog-specific fields when clicking Cat/Dog radio buttons
+- add for_dog and for_cat class to form
+- CSS should do the rest
 
 skin the website to look like c-snip or add a iframe to c-snip website.
 
@@ -19,5 +21,13 @@ write specs to pull information for appointments
 remove Login link from new appt. page
 
 consistent style
+- foot in same place on all pages
+- fonts
 
 ensure new appt. form looks good when there are validation errors
+
+set up users in app (see Pat for who needs an account)
+
+ability to maintain users
+- add/remove
+- enable/disable?
