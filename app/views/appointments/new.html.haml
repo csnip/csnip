@@ -19,7 +19,7 @@
         = form.label :phone
         %br
         = form.text_field :phone
-      %p.required
+      %p
         = form.label :alternate_phone
         %br
         = form.text_field :alternate_phone
@@ -103,18 +103,7 @@
         = form.label :color
         %br
         = form.text_field :color
-      %p.cat_only
-        = form.label :hair_length
-        %br
-        = form.radio_button :hair_length, :short
-        = form.label :hair_length, "Short", :value => "short"
-        %br
-        = form.radio_button :hair_length, :medium
-        = form.label :hair_length, "Medium", :value => "medium"
-        %br
-        = form.radio_button :hair_length, :long
-        = form.label :hair_length, "Long", :value => "long"
-        
+                
       %p
         Please list any other information you have:
         %br
@@ -159,11 +148,7 @@
         = form.label :had_litter_when, "Has your pet had a litter?  If so, when?"
         %br
         = form.text_field :had_litter_when
-
-      %p.dog_only
-        = form.check_box :in_heat
-        = form.label :in_heat, "Is your pet in heat?"
-
+        
       %p
         Please list any surgeries your pet has undergone:
         = form.text_area :surgeries_explanation

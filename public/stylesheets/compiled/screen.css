@@ -511,13 +511,12 @@ form.simple label {
   float: left;
   margin-right: 0;
   width: 630px;
-  padding-left: 80px;
-  padding: 0; }
+  padding-left: 80px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
   * html #errorExplanationContainer {
     overflow-x: hidden; }
 
-/* line 82, ../../../app/stylesheets/screen.sass */
+/* line 81, ../../../app/stylesheets/screen.sass */
 .finished, .request {
   display: inline;
   float: left;
@@ -528,27 +527,27 @@ form.simple label {
   * html .finished, * html .request {
     overflow-x: hidden; }
 
-/* line 86, ../../../app/stylesheets/screen.sass */
+/* line 85, ../../../app/stylesheets/screen.sass */
 .finished {
   text-align: center;
   margin-bottom: 40px; }
 
-/* line 90, ../../../app/stylesheets/screen.sass */
+/* line 89, ../../../app/stylesheets/screen.sass */
 .for_cat .dog_only {
   display: none; }
 
-/* line 93, ../../../app/stylesheets/screen.sass */
+/* line 92, ../../../app/stylesheets/screen.sass */
 .for_dog .cat_only {
   display: none; }
 
-/* line 97, ../../../app/stylesheets/screen.sass */
+/* line 96, ../../../app/stylesheets/screen.sass */
 .form-errors input {
   background: #FBE3E4 none repeat scroll 0 0 !important; }
-/* line 99, ../../../app/stylesheets/screen.sass */
+/* line 98, ../../../app/stylesheets/screen.sass */
 .form-errors label {
   color: #8A1F11; }
 
-/* line 102, ../../../app/stylesheets/screen.sass */
+/* line 101, ../../../app/stylesheets/screen.sass */
 .notes {
   color: #666; }
 
