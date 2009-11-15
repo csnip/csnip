@@ -39,31 +39,30 @@ form.bp
 .user_info, .pet_information, .litter_information
   +column(!blueprint_grid_columns / 2)
 
-.pet_history, .address_container
-  +prepend(1)
+.pet_history
+  +column((!blueprint_grid_columns / 2), true)
+.address_container
   +column(!blueprint_grid_columns / 2, true)
 
-.finished
-  +column(!blueprint_grid_columns, true)
+#errorExplanation, .finished
+  +column((!blueprint_grid_columns), true)
+
+.finished  
   text-align: center
   margin-bottom: 40px
 
-.city
-  input
-    width: 150px
-.postal_code
-  input
-    width: 80px
+/ .city
+/   input
+/     width: 150px
+/ .postal_code
+/   input
+/     width: 80px
   
 .for_cat .dog_only
   display: none
 
 .for_dog .cat_only
   display: none
-
-
-.county
-  +column(10, true)
 
 .form-errors
   input

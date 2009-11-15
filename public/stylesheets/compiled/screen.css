@@ -453,57 +453,57 @@ form.bp textarea {
     overflow-x: hidden; }
 
 /* line 42, ../../../app/stylesheets/screen.sass */
-.pet_history, .address_container {
-  padding-left: 40px;
+.pet_history {
   display: inline;
   float: left;
   margin-right: 0;
   width: 350px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
-  * html .pet_history, * html .address_container {
+  * html .pet_history {
     overflow-x: hidden; }
 
-/* line 46, ../../../app/stylesheets/screen.sass */
-.finished {
+/* line 44, ../../../app/stylesheets/screen.sass */
+.address_container {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
-  text-align: center;
-  margin-bottom: 40px; }
+  width: 350px; }
   /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
-  * html .finished {
+  * html .address_container {
     overflow-x: hidden; }
 
-/* line 52, ../../../app/stylesheets/screen.sass */
-.city input {
-  width: 150px; }
+/* line 47, ../../../app/stylesheets/screen.sass */
+#errorExplanation, .finished {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 710px; }
+  /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
+  * html #errorExplanation, * html .finished {
+    overflow-x: hidden; }
 
-/* line 55, ../../../app/stylesheets/screen.sass */
-.postal_code input {
-  width: 80px; }
+/* line 50, ../../../app/stylesheets/screen.sass */
+.finished {
+  text-align: center;
+  margin-bottom: 40px; }
 
-/* line 58, ../../../app/stylesheets/screen.sass */
+
+
+
+
+
+
+/* line 61, ../../../app/stylesheets/screen.sass */
 .for_cat .dog_only {
   display: none; }
 
-/* line 61, ../../../app/stylesheets/screen.sass */
+/* line 64, ../../../app/stylesheets/screen.sass */
 .for_dog .cat_only {
   display: none; }
 
-/* line 65, ../../../app/stylesheets/screen.sass */
-.county {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 390px; }
-  /* line 101, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
-  * html .county {
-    overflow-x: hidden; }
-
-/* line 69, ../../../app/stylesheets/screen.sass */
+/* line 68, ../../../app/stylesheets/screen.sass */
 .form-errors input {
   background: #FBE3E4 none repeat scroll 0 0 !important; }
-/* line 71, ../../../app/stylesheets/screen.sass */
+/* line 70, ../../../app/stylesheets/screen.sass */
 .form-errors label {
   color: #8A1F11; }

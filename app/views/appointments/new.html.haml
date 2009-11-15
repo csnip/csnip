@@ -104,6 +104,11 @@
           = form.label :hair_length
           %br
           = form.text_field :hair_length
+        %p
+          Please list any other information you have: 
+          %br
+          = form.text_area :comments
+      
     .pet_history
       %fieldset
         %legend Pet History
@@ -160,8 +165,5 @@
           Please list any medications your pet is on:
           = form.text_area :medications_explanation
     .finished
-      Please list any other information you have: 
-      %br
-      = form.text_area :comments      
-    
-      = form.submit "I'm Done, send the request to C-SNIP"
+      %fieldset
+        = form.submit "I'm Done, send the request to C-SNIP"
