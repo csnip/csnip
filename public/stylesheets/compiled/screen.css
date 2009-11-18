@@ -320,7 +320,7 @@ body.bp {
     padding-bottom: 0; }
   /* line 7, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_debug.sass */
   body.bp .showgrid {
-    background: url('/images/grid.png?1258252107'); }
+    background: url('/images/grid.png?1258229354'); }
   /* line 5, ../../../vendor/gems/compass-0.8.17/frameworks/blueprint/stylesheets/blueprint/modules/_interaction.sass */
   body.bp .error {
     padding: .8em;
@@ -577,7 +577,3 @@ form.simple label {
   /* line 116, ../../../app/stylesheets/screen.sass */
   .search .booleans {
     padding-top: 5px; }
-
-/* line 120, ../../../app/stylesheets/screen.sass */
-.search .button {
-  padding-top: 10px; }
