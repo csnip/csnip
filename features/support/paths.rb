@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /^the new intake\/consent form$/
       new_appointment_path
+    when /^the appointment page$/
+      appointment_path(@appointment)
 
     # Add more mappings here.
     # Here is a more fancy example:

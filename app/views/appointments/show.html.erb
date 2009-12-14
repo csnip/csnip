@@ -12,6 +12,18 @@
       <th>Alt.Phone</th><td><%= @appointment.alternate_phone %> </td>
     </tr>
     <tr>
+      <th>Street</th><td><%= @appointment.street %> </td>
+    </tr>
+    <tr>
+      <th>City</th><td><%= @appointment.city %> </td>
+    </tr>
+    <tr>
+      <th>Postal Code</th><td><%= @appointment.postal_code %> </td>
+    </tr>
+    <tr>
+      <th>County</th><td><%= @appointment.county %> </td>
+    </tr>
+    <tr>
       <th>Appt.Created</th><td><%= @appointment.updated_at || @appointment.created_at %> </td>
     </tr>
     <tr>
@@ -66,11 +78,6 @@
   </tbody>
 </table>
 <!-- 
-    t.string   "street"
-    t.string   "city"
-    t.string   "postal_code"
-    t.string   "county"
-
     t.boolean  "pet_goes_outside"
     t.string   "weight"
     t.string   "age"
