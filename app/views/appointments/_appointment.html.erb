@@ -47,10 +47,10 @@
       <th>Date of Birth</th><td><%= appointment.date_of_birth %></td>
     </tr>
     <tr>
-      <th>Want Chip Implant?</th><td><%= appointment.want_chip_implant? ? "Yes" : "No" %></td>
+      <th>Want Chip Implant?</th><td><%= formatted_boolean appointment.want_chip_implant %></td>
     </tr>
     <tr>
-      <th>Want Rabies Vaccination?</th><td><%= appointment.want_rabies_vaccination? ? "Yes" : "No" %></td>
+      <th>Want Rabies Vaccination?</th><td><%= formatted_boolean appointment.want_rabies_vaccination %></td>
     </tr>
     <tr>
       <th>Breed</th><td><%= h appointment.breed %></td>
@@ -62,19 +62,19 @@
       <th>How Long Have You Had Your Pet?</th><td><%= h appointment.owned_for %></td>
     </tr>
     <tr>
-      <th>Has Your Pet Been Vaccinated?</th><td><%= appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %></td>
+      <th>Has Your Pet Been Vaccinated?</th><td><%= formatted_boolean(appointment.vaccinated, true) %></td>
     </tr>
     <tr>
       <th>Veterinarian Name</th><td><%= h appointment.vet_name %></td>
     </tr>
     <tr>
-      <th>Pregnant?</th>  <td><%= appointment.pregnant? ? content_tag(:strong, "Yes") : "No" %></td>
+      <th>Pregnant?</th>  <td><%= formatted_boolean(appointment.pregnant, true) %></td>
     </tr>
     <tr>
       <th>Had Litter When</th><td><%= h appointment.had_litter_when %></td>
     </tr>
     <tr>
-      <th>Surgery?</th><td><%= appointment.surgeries? ? "Yes" : "No" %></td>
+      <th>Surgery?</th><td><%= formatted_boolean(appointment.surgeries) %></td>
     </tr>
     <% if appointment.surgeries? -%>
       <tr>
@@ -82,7 +82,7 @@
       </tr>
     <% end -%>
     <tr>
-      <th>Health Concerns?</th><td><%= appointment.health_concerns? ? "Yes" : "No" %></td>
+      <th>Health Concerns?</th><td><%= formatted_boolean(appointment.health_concerns) %></td>
     </tr>
     <% if appointment.health_concerns? -%>
       <tr>
@@ -90,7 +90,7 @@
       </tr>
     <% end -%>
     <tr>
-      <th>Medications?</th><td><%= appointment.medications? ? "Yes" : "No" %></td>
+      <th>Medications?</th><td><%= formatted_boolean(appointment.medications) %></td>
     </tr>
     <% if appointment.medications? -%>
       <tr>
