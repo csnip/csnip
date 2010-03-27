@@ -24,7 +24,7 @@
       <th>County</th><td><%= @appointment.county %></td>
     </tr>
     <tr>
-      <th>Appt.Created</th><td><%= @appointment.updated_at || @appointment.created_at %></td>
+      <th>Appt. Created</th><td><%= @appointment.created_at.to_s(:mdytz) %></td>
     </tr>
     <tr>
       <th>Pet</th><td><%= @appointment.pet_name %></td>

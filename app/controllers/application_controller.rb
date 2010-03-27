@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
+
+  before_filter :set_time_zone
+
+  def set_time_zone
+    Time.zone = "Eastern Time (US & Canada)"
+  end
+
 end
