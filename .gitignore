@@ -8,3 +8,4 @@ tmp/*
 db/schema.*
 coverage/*
 /public/stylesheets/compiled
+*.sqlite3
