@@ -11,6 +11,9 @@
       <th>Alt.Phone</th><td><%= h appointment.alternate_phone %></td>
     </tr>
     <tr>
+      <th>E-mail</th><td><%= appointment.email.blank? ? "N/A" : mail_to(appointment.email) %></td>
+    </tr>
+    <tr>
       <th>Street</th><td><%= h appointment.street %></td>
     </tr>
     <tr>
