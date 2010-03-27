@@ -1,6 +1,6 @@
 <h1>Appointment</h1>
 
-<table class="single_record">
+<table class="single_record" cellpadding="3">
   <tbody>
     <tr>
       <th>Name</th><td><%= @appointment.name %></td>
@@ -60,7 +60,7 @@
       <th>Hair Length</th><td><%= @appointment.hair_length %></td>
     </tr>
     <tr>
-      <th>Owned For</th><td><%= @appointment.owned_for %></td>
+      <th>Length of Pet Ownership</th><td><%= @appointment.owned_for %></td>
     </tr>
     <tr>
       <th>Vaccinated?</th><td><%= @appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %></td>
