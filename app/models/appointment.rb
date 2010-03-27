@@ -28,7 +28,7 @@ class Appointment < ActiveRecord::Base
     conditions = []
     terms = []
     if params[:last_name].present?
-      conditions << "last_name like ?"
+      conditions << "last_name ilike ?"
       terms.push("%#{params[:last_name]}%")
     end
 
@@ -38,7 +38,7 @@ class Appointment < ActiveRecord::Base
     end    
 
     if params[:county].present?
-      conditions << "county like ?"
+      conditions << "county ilike ?"
       terms.push("%#{params[:county]}%")
     end    
 
