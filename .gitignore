@@ -5,7 +5,6 @@
 log/*
 config/database.yml
 tmp/*
-db/schema.*
 coverage/*
 /public/stylesheets/compiled
 *.sqlite3
