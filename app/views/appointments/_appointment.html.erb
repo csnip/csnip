@@ -65,9 +65,6 @@
       <th>Has Your Pet Been Vaccinated?</th><td><%= appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %></td>
     </tr>
     <tr>
-      <th>Visited Veterinarian?</th><td><%= appointment.visited_vet? ? "Yes" : "No" %></td>
-    </tr>
-    <tr>
       <th>Veterinarian Name</th><td><%= h appointment.vet_name %></td>
     </tr>
     <tr>
