@@ -39,14 +39,47 @@ form.bp
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 
+body.bp.admin
+  background-color: #ddd
+
+
+=text-shadow (!values)
+  -moz-text-shadow= !values
+  -webkit-text-shadow= !values
+  text-shadow= !values
+   
+body.admin
+  #header
+    background = white "url(/images/background-gradient.gif)" "repeat-x" scroll
+
+
+#bar
+  padding: 10px
+
 #container
   +container
   background-color: white
 
 #header
   +column(24, true)
-  height: 180px
+  padding: 10px
+
+      
   
+#header h1
+  margin-top: 30px
+  font-size: 26px
+  +text-shadow (1px 1px 1px #333)  
+  float: right
+  margin-right: 40px
+  color: #fff
+
+h2
+  margin-left: -5px
+  border-left: 5px solid #0f63ac
+  margin-top: 0
+  padding-left: 10px
+  font-size: 16px
 
 #login_link
   float: right

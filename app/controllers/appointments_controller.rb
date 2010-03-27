@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_filter :login_required, :only => [:show]
+  layout 'admin'
 
   def index
     if logged_in?
@@ -18,6 +19,8 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new(params[:appointment])
+    
+    render :layout => "application"
   end
 
   def create
