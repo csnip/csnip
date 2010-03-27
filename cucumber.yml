@@ -1,0 +1,3 @@
+---
+autotest: --color
+autotest-all: --color
