@@ -26,11 +26,12 @@
   <% else %>  
   
       <%= will_paginate @appointments %>
-
+ 
       <table>
         <thead>
           <tr>
             <th>&nbsp;</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Pet</th>
@@ -47,6 +48,7 @@
             <% @appointments.each do |appointment| -%>
               <tr>
                 <td><%= check_box_tag "ids[]", appointment.id %></td>
+                <td><%= appointment.id %></td>
                 <td><%= appointment.name %> </td>
                 <td>
                   <%= appointment.phone %><br />
@@ -72,7 +74,7 @@
           <%- end -%>
         </tbody>
       </table>
-
+ 
       <%= will_paginate @appointments %>
   <% end %>
 </div>
