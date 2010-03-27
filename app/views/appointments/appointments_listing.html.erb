@@ -20,7 +20,7 @@
       </div>
       <%= submit_tag "Search", :class => "button"  %>
     <% end %>
-  </div>  
+  </div>
   <% if @appointments.blank? %>
     <h2>There are no appointments.</h2>
   <% else %>  
@@ -30,6 +30,7 @@
       <table>
         <thead>
           <tr>
+            <th>&nbsp;</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Pet</th>
@@ -42,25 +43,33 @@
           </tr>
         </thead>
         <tbody>
-          <% @appointments.each do |appointment| -%>
-            <tr>
-              <td><%= appointment.name %> </td>
-              <td>
-                <%= appointment.phone %><br />
-                <%= appointment.alternate_phone %>
-              </td>
-              <td><%= appointment.cat_or_dog %>/<%= appointment.gender %>: <%= appointment.pet_name %> </td>
-              <td><%= appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %> </td>
-              <td><%= appointment.pregnant?   ? content_tag(:strong, "Yes") : "No" %> </td>
-              <td><%= link_to_if(appointment.surgeries, "Yes", appointment, :anchor => 'surgeries',
-                                 :title => h(appointment.surgeries_explanation)) {|_| "No" } %> </td>
-              <td><%= link_to_if(appointment.health_concerns, "Yes", appointment, :anchor => 'health_concerns',
-                                 :title => h(appointment.health_concerns_explanation)) {|_| "No" } %> </td>
-              <td><%= link_to_if(appointment.medications, "Yes", appointment, :anchor => 'medications',
-                                 :title => h(appointment.medications_explanation)) {|_| "No" } %> </td>
-              <td><%= link_to 'Show', appointment %> </td>
+          <%- form_tag(appointment_path(0), :method => 'get') do -%>
+            <% @appointments.each do |appointment| -%>
+              <tr>
+                <td><%= check_box_tag "ids[]", appointment.id %></td>
+                <td><%= appointment.name %> </td>
+                <td>
+                  <%= appointment.phone %><br />
+                  <%= appointment.alternate_phone %>
+                </td>
+                <td><%= appointment.cat_or_dog %>/<%= appointment.gender %>: <%= appointment.pet_name %> </td>
+                <td><%= appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %> </td>
+                <td><%= appointment.pregnant?   ? content_tag(:strong, "Yes") : "No" %> </td>
+                <td><%= link_to_if(appointment.surgeries, "Yes", appointment, :anchor => 'surgeries',
+                                   :title => h(appointment.surgeries_explanation)) {|_| "No" } %> </td>
+                <td><%= link_to_if(appointment.health_concerns, "Yes", appointment, :anchor => 'health_concerns',
+                                   :title => h(appointment.health_concerns_explanation)) {|_| "No" } %> </td>
+                <td><%= link_to_if(appointment.medications, "Yes", appointment, :anchor => 'medications',
+                                   :title => h(appointment.medications_explanation)) {|_| "No" } %> </td>
+                <td><%= link_to 'Show', appointment %> </td>
+              </tr>
+            <% end -%>
+            <tr class="last">
+              <td colspan="2"><%= submit_tag "Print Selected" %></td>
+              <td colspan="8">&nbsp;</td>
             </tr>
-          <% end -%>
+            
+          <%- end -%>
         </tbody>
       </table>
 

@@ -9,9 +9,10 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    unless @appointment = Appointment.find_by_id(params[:id])
-      flash[:warning] = "That appointment was not found"
-      redirect_to :action => 'index'
+    if params[:ids]
+      @appointments = Appointment.find(params[:ids])
+    elsif params[:id]
+      @appointments = [Appointment.find(params[:id])]
     end
   end
 

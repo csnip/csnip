@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => :appointments, :action => "new"
   map.resources :appointments
+
   
   map.search   '/search',   :controller => 'appointments', :action => 'search'
   map.logout   '/logout',   :controller => 'sessions', :action => 'destroy'
