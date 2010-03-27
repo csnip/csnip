@@ -1,0 +1,6 @@
+# csnip.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+activesupport -v2.3.5
+ffi -v0.6.3
+hoptoad_notifier -v2.2.2
+rack -v1.0.0
+sqlite3-ruby -v1.2.5
