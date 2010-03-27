@@ -8,3 +8,4 @@ tmp/*
 coverage/*
 /public/stylesheets/compiled
 *.sqlite3
+rerun.txt
