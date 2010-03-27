@@ -13,3 +13,10 @@ set :deploy_to, "/home/#{user}/csnip-appt"
 set :repository,  "git://git.assembla.com/givecamp-community-spay-neuter-initiative-partnership.git"
 set :git_shallow_clone, 1
 set :scm_verbose, true
+
+
+Dir[File.join(File.dirname(__FILE__), '..', 'vendor', 'gems', 'hoptoad_notifier-*')].each do |vendored_notifier|
+  $: << File.join(vendored_notifier, 'lib')
+end
+
+require 'hoptoad_notifier/capistrano'
