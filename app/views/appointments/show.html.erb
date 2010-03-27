@@ -3,31 +3,31 @@
 <table class="single_record" cellpadding="3">
   <tbody>
     <tr>
-      <th>Name</th><td><%= @appointment.name %></td>
+      <th>Name</th><td><%= h @appointment.name %></td>
     </tr>
     <tr>
-      <th>Phone</th><td><%= @appointment.phone %></td>
+      <th>Phone</th><td><%= h @appointment.phone %></td>
     </tr>
     <tr>
-      <th>Alt.Phone</th><td><%= @appointment.alternate_phone %></td>
+      <th>Alt.Phone</th><td><%= h @appointment.alternate_phone %></td>
     </tr>
     <tr>
-      <th>Street</th><td><%= @appointment.street %></td>
+      <th>Street</th><td><%= h @appointment.street %></td>
     </tr>
     <tr>
-      <th>City</th><td><%= @appointment.city %></td>
+      <th>City</th><td><%= h @appointment.city %></td>
     </tr>
     <tr>
-      <th>Postal Code</th><td><%= @appointment.postal_code %></td>
+      <th>Postal Code</th><td><%= h @appointment.postal_code %></td>
     </tr>
     <tr>
-      <th>County</th><td><%= @appointment.county %></td>
+      <th>County</th><td><%= h @appointment.county %></td>
     </tr>
     <tr>
       <th>Appt. Created</th><td><%= @appointment.created_at.to_s(:mdytz) %></td>
     </tr>
     <tr>
-      <th>Pet Name</th><td><%= @appointment.pet_name %></td>
+      <th>Pet Name</th><td><%= h @appointment.pet_name %></td>
     </tr>
     <tr>
       <th>Pet Type</th><td><%= @appointment.cat_or_dog %></td>
@@ -51,16 +51,16 @@
       <th>Want Rabies Vaccination?</th><td><%= @appointment.want_rabies_vaccination? ? "Yes" : "No" %></td>
     </tr>
     <tr>
-      <th>Breed</th><td><%= @appointment.breed %></td>
+      <th>Breed</th><td><%= h @appointment.breed %></td>
     </tr>
     <tr>
-      <th>Color</th><td><%= @appointment.color %></td>
+      <th>Color</th><td><%= h @appointment.color %></td>
     </tr>
     <tr>
-      <th>Hair Length</th><td><%= @appointment.hair_length %></td>
+      <th>Hair Length</th><td><%= h @appointment.hair_length %></td>
     </tr>
     <tr>
-      <th>Length of Pet Ownership</th><td><%= @appointment.owned_for %></td>
+      <th>Length of Pet Ownership</th><td><%= h @appointment.owned_for %></td>
     </tr>
     <tr>
       <th>Vaccinated?</th><td><%= @appointment.vaccinated? ? "Yes" : content_tag(:strong, "No") %></td>
@@ -69,20 +69,20 @@
       <th>Visited Veterinarian?</th><td><%= @appointment.visited_vet? ? "Yes" : "No" %></td>
     </tr>
     <tr>
-      <th>Veterinarian Name</th><td><%= @appointment.vet_name %></td>
+      <th>Veterinarian Name</th><td><%= h @appointment.vet_name %></td>
     </tr>
     <tr>
       <th>Pregnant?</th>  <td><%= @appointment.pregnant? ? content_tag(:strong, "Yes") : "No" %></td>
     </tr>
     <tr>
-      <th>Had Litter When</th><td><%= @appointment.had_litter_when %></td>
+      <th>Had Litter When</th><td><%= h @appointment.had_litter_when %></td>
     </tr>
     <tr>
       <th>Surgery?</th><td><%= @appointment.surgeries? ? "Yes" : "No" %></td>
     </tr>
     <% if @appointment.surgeries? -%>
       <tr>
-        <th>&nbsp;</th><td><%=h @appointment.surgeries_explanation %></td>
+        <th>&nbsp;</th><td><%= h @appointment.surgeries_explanation %></td>
       </tr>
     <% end -%>
     <tr>
@@ -90,7 +90,7 @@
     </tr>
     <% if @appointment.health_concerns? -%>
       <tr>
-        <th>&nbsp;</th><td><%=h @appointment.health_concerns_explanation %></td>
+        <th>&nbsp;</th><td><%= h @appointment.health_concerns_explanation %></td>
       </tr>
     <% end -%>
     <tr>
@@ -98,12 +98,12 @@
     </tr>
     <% if @appointment.medications? -%>
       <tr>
-        <th>&nbsp;</th><td><%=h @appointment.medications_explanation %></td>
+        <th>&nbsp;</th><td><%= h @appointment.medications_explanation %></td>
       </tr>
     <% end -%>
     </tr>
     <tr>
-      <th>Comments</th><td><%= @appointment.comments %></td>
+      <th>Comments</th><td><%= h @appointment.comments %></td>
     </tr>
   </tbody>
 </table>
