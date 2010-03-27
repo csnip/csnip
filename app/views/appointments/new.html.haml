@@ -58,23 +58,23 @@
       %p.required
         %label Your pet is a:
         %br
-        = form.radio_button :cat_or_dog, :dog, :onclick => "$('#new_appointment').removeClass('for_cat').addClass('for_dog')"
-        = form.label :cat_or_dog, "Dog", :value => "dog"
+        = form.radio_button :cat_or_dog, :dog
+        = form.label :cat_or_dog, "Dog", :value => :dog
         %br
         = form.radio_button :cat_or_dog, :cat
-        = form.label :cat_or_dog, "Cat", :value => "cat", :onclick => "$('#new_appointment').removeClass('for_dog').addClass('for_cat')"
+        = form.label :cat_or_dog, "Cat", :value => :cat
         %br
       %p.required
         %label Gender:
         %br
         = form.radio_button :gender, :male
-        = form.label :gender, "Male", :value => "male"
+        = form.label :gender, "Male", :value => :male
         %br
         = form.radio_button :gender, :female
-        = form.label :gender, "Female", :value => "female"
+        = form.label :gender, "Female", :value => :female
         %br
         = form.radio_button :gender, :not_sure
-        = form.label :gender, "Not sure", :value => "not_sure"
+        = form.label :gender, "Not sure", :value => :not_sure
 
       %p.required
         = form.label :age
@@ -119,6 +119,27 @@
     %fieldset
       %legend Pet History
       %p
+        = form.label :acquired_from, "How did you acquire your pet?"
+        %br
+        = form.radio_button :acquired_from_type, :stray
+        = form.label :acquired_from_type, "Stray", :value => :stray
+        %br
+        = form.radio_button :acquired_from_type, :adopted
+        = form.label :acquired_from_type, "Adopted", :value => :adopted
+        %br
+        = form.radio_button :acquired_from_type, :friend
+        = form.label :acquired_from_type, "Friend", :value => :friend
+        %br
+        = form.radio_button :acquired_from_type, :breeder
+        = form.label :acquired_from_type, "Breeder", :value => :breeder
+        %br
+        = form.radio_button :acquired_from_type, :other
+        = form.label :acquired_from_type, "Other", :value => :other
+        %br
+          %span{ :style => 'margin-left: 20px;' }
+            = from.text_field_tag :acquired_from_other_description
+        %br
+      %p
         = form.label :owned_for, "How long have you owned your pet?"
         %br
         = form.text_field :owned_for
@@ -137,14 +158,14 @@
       %p
         %label Is your pet pregnant?
         %br
-        = radio_button_tag :pregnant, :yes
-        = label_tag "pregnant_yes", "Yes"
+        = form.radio_button :pregnant, :yes
+        = form.label :pregnant, "Yes", :value => :yes
         %br
-        = radio_button_tag :pregnant, :no
-        = label_tag "pregnant_no", "No"
+        = form.radio_button :pregnant, :no
+        = form.label :pregnant, "No", :value => :no
         %br
-        = radio_button_tag :pregnant, :not_sure
-        = label_tag "pregnant_not_sure", "Not Sure"
+        = form.radio_button :pregnant, :not_sure
+        = form.label :pregnant, "Not Sure", :value => :not_sure
 
       %p
         = form.label :had_litter_when, "Has your pet had a litter?  If so, when?"

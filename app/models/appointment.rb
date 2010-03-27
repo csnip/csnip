@@ -1,7 +1,9 @@
 class Appointment < ActiveRecord::Base
   
   validates_presence_of :last_name, :first_name, :phone, :cat_or_dog, :gender, :age, :pet_name
-
+  attr_accessor :acquired_from_type, :acquired_from_other_description
+  before_create :set_acquired_from
+  
   def person_attributes
     { :first_name => first_name, 
       :last_name => last_name, 
@@ -57,5 +59,15 @@ class Appointment < ActiveRecord::Base
 
     conditions = [conditions.join(' AND ')].push(terms).flatten
     paginate(:conditions => conditions, :page => params[:page], :order => 'created_at DESC')
-  end  
+  end
+
+  def set_acquired_from
+    if acquired_from_type == 'other'
+      self.acquired_from = "other: #{acquired_from_other_description}"
+    elsif acquired_from_type.blank?
+      self.acquired_from = "none"
+    else
+      self.acquired_from = acquired_from_type
+    end
+  end
 end
