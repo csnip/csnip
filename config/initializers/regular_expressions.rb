@@ -1,0 +1,1 @@
+PHONE_NUMBER_REGEX = /(?:\d[- ()X]*){7,12}/i

@@ -4,6 +4,9 @@ class Appointment < ActiveRecord::Base
   attr_accessor :acquired_from_type, :acquired_from_other_description
   before_create :set_acquired_from
   
+  validates_format_of :phone, :with => PHONE_NUMBER_REGEX
+  validates_format_of :alternate_phone, :with => PHONE_NUMBER_REGEX  
+
   def person_attributes
     { :first_name => first_name, 
       :last_name => last_name, 
