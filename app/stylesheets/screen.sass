@@ -78,10 +78,40 @@ form.simple
   +column((!blueprint_grid_columns - 2), true)
   +prepend(2)
 
-.finished, .request, #users_new, .login, #appointments_listing
+.finished, .request, #users_new, .login
   +column((!blueprint_grid_columns), true)
   +prepend(2)
 
+#appointments_listing td
+  border-bottom: 1px solid #c9d9ff
+
+.pagination
+  :margin-bottom 10px
+  :text-align center
+  :padding .3em
+  a, span
+    :padding .2em .5em
+  span.disabled
+    :color #AAA
+  span.current
+    :font-weight bold
+  a
+    :border 1px solid #c9d9ff
+    :text-decoration none
+    &:hover, &:focus
+      :border-color #c9d9ff
+      :background #c9d9ff
+      :color white
+  .page_info
+    :color #aaa
+    :padding-top .8em
+  .prev_page, .next_page
+    :border-width 1px
+  .prev_page
+    :margin-right 1em
+  .next_page
+    :margin-left 1em
+    
 .finished  
   text-align: center
   margin-bottom: 40px
