@@ -7,19 +7,29 @@
 
     - form_for @search do |f|
       %label Last Name:
-      = f.text_field :last_name_like
+      = f.text_field :last_name_like, :size => 15
       
       %label County:
-      = f.text_field :county_like
+      = f.text_field :county_like, :size => 15
       
       %label Zipcode:
       = f.text_field :postal_code_like, :size => 10
+      
+      |
       
       = f.check_box "pet_type_equals_any", {:name => "search[pet_type_equals_any][]"}, "cat"
       %label Cats
 
       = f.check_box "pet_type_equals_any", {:name => "search[pet_type_equals_any][]"}, "dog"
       %label Dogs
+
+      |
+      
+      %label Date From:
+      = f.text_field :postal_code_like, :size => 8
+
+      %label To:
+      = f.text_field :postal_code_like, :size => 8
 
       = f.submit "Search"
 
