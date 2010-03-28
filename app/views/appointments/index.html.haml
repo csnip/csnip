@@ -1,3 +1,6 @@
+%script{ :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript" }
+%script{ :src => "/javascripts/appointmentslist.js", :type => "text/javascript" }
+	
 #appointments_listing
   %h2 Appointments
   .search
@@ -32,7 +35,7 @@
     
   - else
     = will_paginate @appointments
-    - form_tag(appointment_path(0), :method => 'get') do
+    - form_tag(appointment_path(0), :method => 'get', :id => 'appointment_form') do
       = submit_tag "Print Selected" 
       %table
         %thead
