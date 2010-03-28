@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100327145217) do
+ActiveRecord::Schema.define(:version => 20100327193526) do
 
   create_table "appointments", :force => true do |t|
     t.string   "last_name"
@@ -51,7 +51,10 @@ ActiveRecord::Schema.define(:version => 20100327145217) do
     t.boolean  "want_rabies_vaccination"
     t.text     "comments"
     t.string   "email"
+    t.string   "current_status"
   end
+
+  add_index "appointments", ["current_status"], :name => "index_appointments_on_current_status"
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40

@@ -8,12 +8,7 @@ Factory.define(:appointment) do |f|
   f.sequence(:pet_name) { |n| "Pet #{n}" }
 end
 
-Factory.define(:new_appointment, :parent => :appointment) do |f|
-
-end
-
 Factory.define(:new_request, :parent => :appointment) do |f|
-  f.current_state :requested
 end
 
 Factory.define(:user) do |f|
@@ -23,5 +18,3 @@ Factory.define(:user) do |f|
   f.password "sUperH@cker"
   f.password_confirmation "sUperH@cker"
 end
-
-  

@@ -15,7 +15,9 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
   config.load_paths += %W( #{RAILS_ROOT}/app/mailers )
 
-  # Specify gems that this application depends on and have them installed with rake gems:install
+  # Specify gems that this application depends on and have them
+  # installed with rake gems:install
+  config.gem "aasm"
   config.gem "haml"
   config.gem "compass"
   config.gem "hoptoad_notifier"

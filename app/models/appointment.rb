@@ -1,5 +1,15 @@
 class Appointment < ActiveRecord::Base
+  include AASM
+
+  aasm_column :current_status
   
+  aasm_initial_state :requested
+
+  aasm_state :requested
+#  aasm_state :acknowledged
+#  aasm_state :scheduled
+#  aasm_state :completed
+
   validates_presence_of :last_name, :first_name, :phone, :cat_or_dog, :gender, :age, :pet_name
 
   def person_attributes
