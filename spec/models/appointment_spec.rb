@@ -6,7 +6,7 @@ describe Appointment do
       :last_name => 'Schneppy',
       :first_name => 'Tim',
       :phone => '4178552693',
-      :cat_or_dog => 'cat',
+      :pet_type => 'cat',
       :gender => 'female',
       :age => 'about 3 years old',
       :pet_name => 'Bella'

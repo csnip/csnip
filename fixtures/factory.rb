@@ -2,7 +2,7 @@ Factory.define(:appointment) do |f|
   f.last_name "Doe"
   f.first_name "John"
   f.phone "6168675309"
-  f.cat_or_dog "cat"
+  f.pet_type "cat"
   f.gender "female"
   f.age "5 years"
   f.sequence(:pet_name) { |n| "Pet #{n}" }

@@ -12,20 +12,20 @@
       %label Zipcode:
       = f.text_field :postal_code_like, :size => 10
       
-      = f.check_box :cats
+      = f.check_box "pet_type_like_any[]", :value => "cat"
       %label Cats
 
-      = f.check_box :dogs
+      = f.check_box "pet_type_like_any[]", :value => "dog"
       %label Dogs
 
       = f.submit "Search"
 
   .statistics
     Cats
-    = @search.count(:conditions => {:cat_or_dog => 'cat'})
+    = @search.count(:conditions => {:pet_type => 'cat'})
 
     Dogs
-    = @search.count(:conditions => {:cat_or_dog => 'dog'})
+    = @search.count(:conditions => {:pet_type => 'dog'})
 
   - if @appointments.blank?
     %h3.no_data There are no appointments matching the criteria you've selected.
@@ -62,7 +62,7 @@
                 %br
                 = formatted_phone(appointment.alternate_phone)
               %td
-                = "#{appointment.cat_or_dog} / #{appointment.gender}: #{appointment.pet_name}"
+                = "#{appointment.pet_type} / #{appointment.gender}: #{appointment.pet_name}"
               %td
                 = appointment.pet_vaccinated
               %td

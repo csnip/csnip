@@ -27,7 +27,7 @@ When /^the client submits the appointment request form$/ do
   fill_in(:appointment_last_name, :with => @appointment.last_name)
   fill_in(:appointment_first_name, :with => @appointment.first_name)
   fill_in(:appointment_phone, :with => @appointment.phone)
-  choose("appointment_cat_or_dog_#{@appointment.cat_or_dog}")
+  choose("appointment_pet_type_#{@appointment.pet_type}")
   fill_in(:appointment_age, :with => @appointment.age)
   fill_in(:appointment_pet_name, :with => @appointment.pet_name)
   click_button(:appointment_submit)

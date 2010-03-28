@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100328060850) do
+ActiveRecord::Schema.define(:version => 20100328152248) do
 
   create_table "appointments", :force => true do |t|
     t.string   "last_name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20100328060850) do
     t.string   "city"
     t.string   "postal_code"
     t.string   "county"
-    t.string   "cat_or_dog"
+    t.string   "pet_type"
     t.string   "breed"
     t.string   "color"
     t.string   "gender"
@@ -42,15 +42,16 @@ ActiveRecord::Schema.define(:version => 20100328060850) do
     t.text     "comments"
     t.string   "email"
     t.string   "acquired_from"
+    t.string   "current_status"
     t.string   "best_time_to_contact_client"
     t.string   "pet_vaccinated"
     t.string   "pet_pregnant"
     t.string   "pet_in_heat"
     t.string   "pet_testicles_decended"
-    t.string   "current_status"
   end
 
   add_index "appointments", ["current_status"], :name => "index_appointments_on_current_status"
+  add_index "appointments", ["pet_type"], :name => "index_appointments_on_pet_type"
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40

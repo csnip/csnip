@@ -66,11 +66,11 @@
       %p.required
         %label Your pet is a
         %br
-        = form.radio_button :cat_or_dog, :dog
-        = form.label :cat_or_dog, "Dog", :value => :dog
+        = form.radio_button :pet_type, :dog
+        = form.label :pet_type, "Dog", :value => :dog
         %br
-        = form.radio_button :cat_or_dog, :cat
-        = form.label :cat_or_dog, "Cat", :value => :cat
+        = form.radio_button :pet_type, :cat
+        = form.label :pet_type, "Cat", :value => :cat
         %br
       %p.required
         %label Gender

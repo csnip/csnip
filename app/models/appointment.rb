@@ -10,12 +10,12 @@ class Appointment < ActiveRecord::Base
 #  aasm_state :scheduled
 #  aasm_state :completed
 
-  validates_presence_of :last_name, :first_name, :phone, :cat_or_dog, :gender, :age, :pet_name
+  validates_presence_of :last_name, :first_name, :phone, :pet_type, :gender, :age, :pet_name
   attr_accessor :acquired_from_type, :acquired_from_other_description
   before_create :set_acquired_from
   
-  named_scope :cats, :conditions => {:cat_or_dog => "cat"}
-  named_scope :dogs, :conditions => {:cat_or_dog => "dog"}
+  named_scope :cats, :conditions => {:pet_type => "cat"}
+  named_scope :dogs, :conditions => {:pet_type => "dog"}
   
   def person_attributes
     { :first_name => first_name, 
