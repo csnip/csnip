@@ -15,7 +15,7 @@ module ApplicationHelper
   def formatted_phone(value)
     return '' if value.blank?
 
-    phone_string = value.gsub(/\D/, '')
+    phone_string = value.gsub(/[\s().-]/i, '')
     match = /^\d{10}?$/.match(phone_string)
     if !match
       value

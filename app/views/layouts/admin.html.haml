@@ -1,0 +1,22 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{ 'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8' }
+    
+    %title C-SNIP :: Administration
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    %script{ :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js' }
+      
+    /[if IE]
+      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+
+  %body.bp.admin
+    #container
+      #bar= link_to '&larr; Back to Site', 'http://csnip.org/'
+      #header
+        = image_tag('logo.png', :style => 'float: left')
+        %h1 Administration
+      = flash_div :error, :warning, :notice
+      = yield
