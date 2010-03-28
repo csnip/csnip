@@ -37,11 +37,11 @@
       %th Pet name
       %td #{appointment.pet_name}
     %tr
-      %th Type of pet
+      %th Pet type
       %td #{appointment.pet_type.capitalize}
     %tr
       %th Sex
-      %td #{appointment.gender.capitalize}
+      %td #{appointment.gender.humanize}
     %tr
       %th Age
       %td #{appointment.age}

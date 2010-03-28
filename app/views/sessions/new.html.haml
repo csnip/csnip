@@ -1,0 +1,17 @@
+.login
+  %h1 Log In
+  -form_tag session_path, :class => 'simple' do
+    %p
+      = label_tag 'login'
+      = text_field_tag 'login', @login
+    %p
+      = label_tag 'password'
+      = password_field_tag 'password', nil
+    %p
+      = label_tag 'remember_me', 'Remember me?'
+      = check_box_tag 'remember_me', '1', @remember_me
+    %p
+      = label_tag ''
+      = submit_tag 'Log in'
+      or
+      = link_to 'Cancel', 'http://csnip.org/'
