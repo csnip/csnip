@@ -73,7 +73,7 @@
         = form.label :pet_type, "Cat", :value => :cat
         %br
       %p.required
-        %label Gender
+        %label Sex
         %br
         = form.radio_button :gender, :male
         = form.label :gender, "Male", :value => :male
@@ -159,7 +159,7 @@
         = form.radio_button :pet_vaccinated, :not_sure
         = form.label :pet_vaccinated, "Not Sure", :value => :not_sure
       %p
-        = form.label :vet_name, "Veterinarian name"
+        = form.label :vet_name, "Veterinarian's name"
         %br
         = form.text_field :vet_name
       %p

@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new(params[:appointment])
-    render :layout => "application"
+    render :layout => 'application'
   end
 
   def create
@@ -26,8 +26,9 @@ class AppointmentsController < ApplicationController
       # TODO: do not email
       # url = appointment_url(@appointment)
       # Mailer.deliver_appointment_submitted(@appointment, url)
+      render :layout => 'application'
     else
-      render :action => :new
+      render :action => :new, :layout => 'application'
     end
   end
   

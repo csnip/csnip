@@ -1,4 +1,6 @@
-%h2 Appointment
+%h2 Appointment - ID: #{appointment.id}
+%div{ :style => 'padding-left: 10px' }
+  = link_to '&larr; Back to Appointment Listing', appointments_url
 %table.single_record{ :cellpadding => "3", :width => "100%" }
   %tbody
     %tr
@@ -36,10 +38,10 @@
       %td #{appointment.pet_name}
     %tr
       %th Type of pet
-      %td #{appointment.pet_type}
+      %td #{appointment.pet_type.capitalize}
     %tr
-      %th Gender
-      %td #{appointment.gender}
+      %th Sex
+      %td #{appointment.gender.capitalize}
     %tr
       %th Age
       %td #{appointment.age}

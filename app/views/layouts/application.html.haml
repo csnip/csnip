@@ -12,9 +12,9 @@
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
 
-  %body.bp
+  %body.bp.admin.appointment_request
     #container
       #header
-        %iframe{ :src => 'http://www.csnip.org/header.html', :width => '100%', :scrolling => 'no', :height => '200px' }
+        = image_tag('logo.png', :style => 'float: left')
       = flash_div :error, :warning, :notice
       = yield
