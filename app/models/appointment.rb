@@ -5,7 +5,7 @@ class Appointment < ActiveRecord::Base
   before_create :set_acquired_from
   
   validates_format_of :phone, :with => PHONE_NUMBER_REGEX
-  validates_format_of :alternate_phone, :with => PHONE_NUMBER_REGEX  
+  validates_format_of :alternate_phone, :with => PHONE_NUMBER_REGEX, :allow_blank => true  
 
   def person_attributes
     { :first_name => first_name, 

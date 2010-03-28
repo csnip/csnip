@@ -13,6 +13,7 @@ Feature: Phone Number Validation
       | 999999999999999 |
       | 11111111111     |
       | 111111111111    |
+      | 419.419.2222    |
       
     When it is submitted
     Then it should validate
