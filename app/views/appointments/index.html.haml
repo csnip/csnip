@@ -77,9 +77,9 @@
               %td
                 = appointment.gender.humanize
               %td
-                = appointment.pet_vaccinated.humanize
+                = appointment.pet_vaccinated.to_s.humanize
               %td
-                = appointment.pet_pregnant.humanize
+                = appointment.pet_pregnant.to_s.humanize
               %td
                 = link_to 'Show', appointment
           %tr.last
