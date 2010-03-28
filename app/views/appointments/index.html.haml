@@ -59,9 +59,9 @@
             %th &nbsp;
         %tbody
           - @appointments.each do |appointment|
-            %tr
+            %tr{ :id => "appointment_#{appointment.id}" }
               %td
-                = check_box_tag "ids[]", appointment.id
+                = check_box_tag "ids[]", appointment.id, false, :id => "appointment_checkbox_#{appointment.id}", :class => "appointment_check_box"
               %td
                 = appointment.id
               %td
@@ -84,6 +84,6 @@
                 = link_to 'Show', appointment
           %tr.last
             %td{ :colspan => "2" }
-              = submit_tag "Print Selected"
+              = submit_tag "Print Selected", :id => "print_submit"
             %td{ :colspan => "8" } &nbsp;
     = will_paginate @appointments

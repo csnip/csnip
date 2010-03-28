@@ -16,9 +16,12 @@ module NavigationHelpers
     when /the login page/
       '/login'
 
-    when /the appointments list page/
+    when /the appointments list/
       '/appointments'
-    
+
+    when /the appointment request page/
+      '/appointments/new'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

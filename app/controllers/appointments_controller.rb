@@ -30,5 +30,13 @@ class AppointmentsController < ApplicationController
       render :action => :new, :layout => 'application'
     end
   end
+
+  def confirm_print
+    # move this logic down into the model...
+    if params[:appointment_ids]
+      Appointment.update_all({:current_status => "acknowledged"}, 
+                             ["id IN (?)", params[:appointment_ids] ])
+    end
+  end
   
 end

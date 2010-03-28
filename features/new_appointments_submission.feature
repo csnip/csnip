@@ -4,6 +4,6 @@ Feature: Client Appointments Features
   I want to request an appointment
 
   Scenario: New Appointment submission
-    Given a client goes to the appointment request page
+    Given I go to the appointment request page
     When the client submits the appointment request form
-    Then the appointment status should be requested
+    Then the status of the appointment should be requested

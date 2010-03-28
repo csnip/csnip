@@ -9,10 +9,13 @@ Factory.define(:appointment) do |f|
 end
 
 Factory.define(:new_appointment, :parent => :appointment) do |f|
-
 end
 
 Factory.define(:new_request, :parent => :appointment) do |f|
+end
+
+Factory.define(:scheduled_appointment, :parent => :appointment) do |f|
+  f.current_status :scheduled
 end
 
 Factory.define(:user) do |f|
@@ -22,5 +25,3 @@ Factory.define(:user) do |f|
   f.password "sUperH@cker"
   f.password_confirmation "sUperH@cker"
 end
-
-  

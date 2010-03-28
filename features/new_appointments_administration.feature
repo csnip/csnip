@@ -6,23 +6,22 @@ Feature: New Appointments Features
   Scenario: View new appointment requests
     Given a new request
     And I am logged in as an administrator
-    When I view the list of requests
+    When I go to the appointments list
     Then I should see the new request
     And the status of the appointment should be requested
 
   Scenario: Print new appointment requests
     Given a new request
+    And I am logged in as an administrator
     And I print the list of new requests
     Then the status of the appointment should be acknowledged
 
-  Scenario: Schedule an appointment
-    Given I view an appointment request
-    When I indicate that an appointment is scheduled
-    Then the status of the appointment should be scheduled
+  # Scenario: Schedule an appointment
+  #   Given I view an appointment request
+  #   When I indicate that an appointment is scheduled
+  #   Then the status of the appointment should be scheduled
 
-  Scenario: Complete an appointment
-    Given I view a scheduled appointment
-    When I indicate the appointment was attended
-    Then the status of the appointment should be completed
-
-  
+  # Scenario: Complete an appointment
+  #   Given I am editing an appointment
+  #   When I indicate the appointment was attended
+  #   Then the status of the appointment should be completed
