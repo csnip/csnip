@@ -4,9 +4,6 @@ class Appointment < ActiveRecord::Base
   attr_accessor :acquired_from_type, :acquired_from_other_description
   before_create :set_acquired_from
   
-  validates_format_of :phone, :with => PHONE_NUMBER_REGEX
-  validates_format_of :alternate_phone, :with => PHONE_NUMBER_REGEX, :allow_blank => true  
-
   def person_attributes
     { :first_name => first_name, 
       :last_name => last_name, 
@@ -19,14 +16,12 @@ class Appointment < ActiveRecord::Base
     }
   end
   
-  def name
-    name = self.last_name.dup
-    name << ", #{self.first_name}" unless self.first_name.blank?
-    name
+  def client_name_last_comma_first
+    [last_name, first_name].join(', ')
   end
   
-  def full_name
-    "#{first_name} #{last_name}"
+  def client_full_name
+    [first_name, last_name].join(' ')
   end
   
   def self.search(params)

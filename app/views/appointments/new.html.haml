@@ -19,11 +19,18 @@
         = form.label :phone
         %br
         = form.text_field :phone
+        %br
+        %span.notes e.g., (616) 555-5555
+      %p
+        = form.label :best_time_to_contact_client, "What is the best time to contact you?"
+        %br
+        = form.text_field :best_time_to_contact_client
       %p
         = form.label :alternate_phone
         %br
         = form.text_field :alternate_phone
-
+        %br
+        %span.notes e.g., (616) 555-5555
       %p
         = form.label :email
         %br
@@ -32,31 +39,32 @@
   .address_container
     %fieldset
       %legend Address
-      %p.street
-        = form.label :street
+      %p
+        = form.label :street, "Street address"
         %br
         = form.text_field :street
-      %p.city
+      %p
         = form.label :city
         %br
         = form.text_field :city
-      %p.postal_code
-        = form.label :postal_code
+      %p
+        = form.label :postal_code, "Zipcode"
         %br
         = form.text_field :postal_code
       %p.county
         = form.label :county
         %br
         = form.text_field :county
+
   .pet_information.clear
     %fieldset
       %legend Basic Pet Information
       %p.required
-        = form.label :pet_name, "Name"
+        = form.label :pet_name
         %br
         = form.text_field :pet_name
       %p.required
-        %label Your pet is a:
+        %label Your pet is a
         %br
         = form.radio_button :cat_or_dog, :dog
         = form.label :cat_or_dog, "Dog", :value => :dog
@@ -65,7 +73,7 @@
         = form.label :cat_or_dog, "Cat", :value => :cat
         %br
       %p.required
-        %label Gender:
+        %label Gender
         %br
         = form.radio_button :gender, :male
         = form.label :gender, "Male", :value => :male
@@ -75,7 +83,6 @@
         %br
         = form.radio_button :gender, :not_sure
         = form.label :gender, "Not sure", :value => :not_sure
-
       %p.required
         = form.label :age
         %br
@@ -87,20 +94,11 @@
         %br
         = form.text_field :weight
         %br
-        An approximation is fine
+        %span.notes An approximation is fine
       %p
         = form.label :date_of_birth
         %br
         = form.text_field :date_of_birth
-      %p
-        = form.check_box :want_chip_implant
-        = form.label :want_chip_implant, "Would you like a chip implant?"
-
-      %p
-        = form.check_box :want_rabies_vaccination
-        = form.label :want_rabies_vaccination, "Would you like a rabies vaccination?"
-
-
       %p.dog_only
         = form.label :breed
         %br
@@ -109,9 +107,14 @@
         = form.label :color
         %br
         = form.text_field :color
-                
       %p
-        Please list any other information you have:
+        = form.check_box :want_chip_implant
+        = form.label :want_chip_implant, "Would you like a chip implant?"
+      %p
+        = form.check_box :want_rabies_vaccination
+        = form.label :want_rabies_vaccination, "Would you like a rabies vaccination?"                
+      %p
+        = form.label :comments, "Please list any other information you have:"
         %br
         = form.text_area :comments
 
@@ -119,7 +122,7 @@
     %fieldset
       %legend Pet History
       %p
-        = form.label :acquired_from, "How did you acquire your pet?"
+        %label How did you acquire your pet?
         %br
         = form.radio_button :acquired_from_type, :stray
         = form.label :acquired_from_type, "Stray", :value => :stray
@@ -138,7 +141,6 @@
         %br
           %span{ :style => 'margin-left: 20px;' }
             = form.text_field :acquired_from_other_description
-        %br
       %p
         = form.label :owned_for, "How long have you owned your pet?"
         %br
@@ -146,43 +148,78 @@
         %br
         %span.notes e.g., 1 year, about 18 months
       %p
-        = form.check_box :vaccinated
-        = form.label :pet_goes_outside, "Is your pet vaccinated?"
+        %label Has your pet been vaccinated?
+        %br
+        = form.radio_button :pet_vaccinated, :yes
+        = form.label :pet_vaccinated, "Yes", :value => :yes
+        %br
+        = form.radio_button :pet_vaccinated, :no
+        = form.label :pet_vaccinated, "No", :value => :no
+        %br
+        = form.radio_button :pet_vaccinated, :not_sure
+        = form.label :pet_vaccinated, "Not Sure", :value => :not_sure
       %p
         = form.label :vet_name, "Veterinarian name"
         %br
         = form.text_field :vet_name
+      %p
+        = form.label :surgeries_explanation, "Any previous surgery? If so, please explain:"
+        = form.text_area :surgeries_explanation
+      %p
+        = form.label :health_concerns_explanation, "Any health issues? If so, please explain:"      
+        = form.text_area :health_concerns_explanation
+      %p
+        = form.label :surgeries_explanation, "Any medications? If so, please explain:"      
+        = form.text_area :medications_explanation
 
     %fieldset
-      %legend Litter/Pregnancy Information
+      %legend Fertility Information
+      %p
+        %label Is your pet in heat?
+        %br
+        = form.radio_button :pet_in_heat, :yes
+        = form.label :pet_in_heat, "Yes", :value => :yes
+        %br
+        = form.radio_button :pet_in_heat, :no
+        = form.label :pet_in_heat, "No", :value => :no
+        %br
+        = form.radio_button :pet_in_heat, :not_sure
+        = form.label :pet_in_heat, "Not Sure", :value => :not_sure
       %p
         %label Is your pet pregnant?
         %br
-        = form.radio_button :pregnant, :yes
-        = form.label :pregnant, "Yes", :value => :yes
+        = form.radio_button :pet_pregnant, :yes
+        = form.label :pet_pregnant, "Yes", :value => :yes
         %br
-        = form.radio_button :pregnant, :no
-        = form.label :pregnant, "No", :value => :no
+        = form.radio_button :pet_pregnant, :no
+        = form.label :pet_pregnant, "No", :value => :no
         %br
-        = form.radio_button :pregnant, :not_sure
-        = form.label :pregnant, "Not Sure", :value => :not_sure
-
+        = form.radio_button :pet_pregnant, :not_sure
+        = form.label :pet_pregnant, "Not Sure", :value => :not_sure
       %p
         = form.label :had_litter_when, "Has your pet had a litter?  If so, when?"
         %br
         = form.text_field :had_litter_when
-        
       %p
-        Please list any surgeries your pet has undergone:
-        = form.text_area :surgeries_explanation
+        %label Has your male pet's testicles decended?
+        %br
+        = form.radio_button :pet_testicles_decended, :yes
+        = form.label :pet_testicles_decended, "Yes", :value => :yes
+        %br
+        = form.radio_button :pet_testicles_decended, :no
+        = form.label :pet_testicles_decended, "No", :value => :no
+        %br
+        = form.radio_button :pet_testicles_decended, :not_sure
+        = form.label :pet_testicles_decended, "Not Sure", :value => :not_sure
+      %p
+        %label If so, how many?
+        %br
+        = form.radio_button :testicle_count, 1
+        = form.label :testicle_count, "1", :value => 1
+        %br
+        = form.radio_button :testicle_count, 2
+        = form.label :testicle_count, "2", :value => 2
 
-      %p
-        Please list any health concerns for your pet:
-        = form.text_area :health_concerns
-
-      %p
-        Please list any medications your pet is on:
-        = form.text_area :medications_explanation
   .finished
     %fieldset
       = form.submit "I'm Done, send the request to C-SNIP"

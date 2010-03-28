@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100327192837) do
+ActiveRecord::Schema.define(:version => 20100328060850) do
 
   create_table "appointments", :force => true do |t|
     t.string   "last_name"
@@ -27,23 +27,13 @@ ActiveRecord::Schema.define(:version => 20100327192837) do
     t.string   "breed"
     t.string   "color"
     t.string   "gender"
-    t.string   "hair_length"
-    t.boolean  "pet_goes_outside"
-    t.boolean  "surgeries"
     t.text     "surgeries_explanation"
-    t.boolean  "health_concerns"
     t.text     "health_concerns_explanation"
-    t.boolean  "medications"
     t.text     "medications_explanation"
     t.string   "age"
     t.string   "owned_for"
-    t.boolean  "vaccinated"
     t.string   "vet_name"
-    t.boolean  "pregnant"
-    t.boolean  "in_heat"
-    t.string   "in_heat_when"
     t.string   "had_litter_when"
-    t.boolean  "nursing"
     t.integer  "testicle_count"
     t.string   "weight"
     t.string   "date_of_birth"
@@ -52,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20100327192837) do
     t.text     "comments"
     t.string   "email"
     t.string   "acquired_from"
+    t.string   "best_time_to_contact_client"
+    t.string   "pet_vaccinated"
+    t.string   "pet_pregnant"
+    t.string   "pet_in_heat"
+    t.string   "pet_testicles_decended"
   end
 
   create_table "users", :force => true do |t|
