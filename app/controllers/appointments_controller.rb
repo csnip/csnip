@@ -1,12 +1,9 @@
 class AppointmentsController < ApplicationController
-  before_filter :login_required, :only => [:show]
+  before_filter :login_required, :except => [:new, :create]
   layout 'admin'
 
   def index
-    if logged_in?
-      @appointments = Appointment.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 70
-      render 'appointments_listing'
-    end
+    @appointments = Appointment.paginate :page => params[:page], :order => 'created_at DESC'
   end
 
   def show
@@ -19,7 +16,6 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new(params[:appointment])
-    
     render :layout => "application"
   end
 
@@ -27,17 +23,11 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(params[:appointment])
     if @appointment.save
       # TODO: do not email
-      #url = appointment_url(@appointment)
-      #Mailer.deliver_appointment_submitted(@appointment, url)
+      # url = appointment_url(@appointment)
+      # Mailer.deliver_appointment_submitted(@appointment, url)
     else
       render :action => :new
     end
   end
   
-  def search
-    if logged_in?
-      @appointments = Appointment.search(params)
-      render 'appointments_listing'
-    end  
-  end
 end

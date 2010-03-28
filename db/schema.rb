@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20100328060850) do
     t.string   "pet_pregnant"
     t.string   "pet_in_heat"
     t.string   "pet_testicles_decended"
+    t.string   "current_status"
   end
 
   add_index "appointments", ["current_status"], :name => "index_appointments_on_current_status"

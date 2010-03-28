@@ -1,0 +1,74 @@
+#appointments_listing
+  %h2 Appointments
+  .search
+    - form_tag(search_path) do
+      %label Last Name:
+      = text_field_tag :last_name
+      %label County:
+      = text_field_tag :county
+      %label Zipcode
+      = text_field_tag :postal_code, nil, :size => 10, :max_length => 10
+      .booleans
+        %label Cat
+        = radio_button_tag :cat_or_dog, :cat
+        %label "Dog"
+        = radio_button_tag :cat_or_dog, :dog
+        %label Vaccinated?
+        = check_box_tag :vaccinated
+      = submit_tag "Search", :class => "button"
+
+  - if @appointments.blank?
+    %h2 There are no appointments.
+  - else
+    = will_paginate @appointments
+    - form_tag(appointment_path(0), :method => 'get') do
+      %table
+        %thead
+          %tr
+            %th &nbsp;
+            %th ID
+            %th Client Name
+            %th Phone
+            %th Pet Name
+            %th Vaccinated?
+            %th Pregnant?
+            %th Surgery?
+            %th Health?
+            %th Meds?
+            %th &nbsp;
+        %tbody
+          %tr.last
+            %td{ :colspan => "2"}
+              = submit_tag "Print Selected"
+            %td{ :colspan => "8" }
+          - @appointments.each do |appointment|
+            %tr
+              %td
+                = check_box_tag "ids[]", appointment.id
+              %td
+                = appointment.id
+              %td
+                = appointment.client_name_last_comma_first
+              %td
+                = formatted_phone(appointment.phone)
+                %br
+                = formatted_phone(appointment.alternate_phone)
+              %td
+                = "#{appointment.cat_or_dog} / #{appointment.gender}: #{appointment.pet_name}"
+              %td
+                = appointment.pet_vaccinated
+              %td
+                = appointment.pet_pregnant
+              %td
+                = appointment.surgeries_explanation
+              %td
+                = appointment.health_concerns_explanation
+              %td
+                = appointment.medications_explanation
+              %td
+                = link_to 'Show', appointment
+            %tr.last
+              %td{ :colspan => "2" }
+                = submit_tag "Print Selected"
+              %td{ :colspan => "8" } &nbsp;
+    = will_paginate @appointments

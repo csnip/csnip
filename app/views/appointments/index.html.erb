@@ -1,7 +1,0 @@
-<div id="login_link">
-  <%= link_to_if(logged_in?, 'Logout', logout_path) {|_| link_to 'Login', login_path } %>
-</div>
-
-<p>Welcome to C-SNIP.</p>
-
-<p>Please <%= link_to "make an appointment", new_appointment_path %>.</p>

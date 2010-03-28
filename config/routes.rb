@@ -1,12 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.root :controller => :appointments, :action => "new"
+  map.root :controller => :appointments, :action => :index
   map.resources :appointments
 
   
-  map.search   '/search',   :controller => 'appointments', :action => 'search'
+  # map.search   '/search',   :controller => 'appointments', :action => 'search'
   map.logout   '/logout',   :controller => 'sessions', :action => 'destroy'
   map.login    '/login',    :controller => 'sessions', :action => 'new'
+
+  # TODO: mess with routes
   map.register '/register', :controller => 'users',    :action => 'create'
   map.signup   '/signup',   :controller => 'users',    :action => 'new'
   map.resources :users
