@@ -3,8 +3,11 @@ class AppointmentsController < ApplicationController
   layout 'admin'
 
   def index
-    @search = Appointment.search(params[:search])
+    @search = Appointment.descend_by_id.search(params[:search])
     @search.pet_type_equals_any = %w[dog cat] unless params[:search] && params[:search][:pet_type_equals_any]
+    @search.created_at_after = 30.days.ago.to_s(:db) if params[:created_at_after].blank?
+    @search.created_at_before = Date.today.to_s(:db) if params[:created_at_before].blank?
+    
     @appointments = @search.paginate(:page => params[:page], :per_page => 50)
   end
 
