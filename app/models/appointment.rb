@@ -14,6 +14,9 @@ class Appointment < ActiveRecord::Base
   attr_accessor :acquired_from_type, :acquired_from_other_description
   before_create :set_acquired_from
   
+  named_scope :cats, :conditions => {:cat_or_dog => "cat"}
+  named_scope :dogs, :conditions => {:cat_or_dog => "dog"}
+  
   def person_attributes
     { :first_name => first_name, 
       :last_name => last_name, 
@@ -34,41 +37,6 @@ class Appointment < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
   
-  def self.search(params)
-    conditions = []
-    terms = []
-    if params[:last_name].present?
-      conditions << "last_name ilike ?"
-      terms.push("%#{params[:last_name]}%")
-    end
-
-    if params[:postal_code].present?
-      conditions << "postal_code = ?"
-      terms.push(params[:postal_code])
-    end    
-
-    if params[:county].present?
-      conditions << "county ilike ?"
-      terms.push("%#{params[:county]}%")
-    end    
-
-    if params[:cat_or_dog].present?
-      conditions << "cat_or_dog = ?"
-      terms.push("#{params[:cat_or_dog]}")
-    end
-    
-    if params[:visited_vet].present?
-      conditions << "visited_vet = true"
-    end  
-
-    if params[:vaccinated].present?
-      conditions << "vaccinated = true"
-    end  
-
-    conditions = [conditions.join(' AND ')].push(terms).flatten
-    paginate(:conditions => conditions, :page => params[:page], :order => 'created_at DESC')
-  end
-
   def set_acquired_from
     if acquired_from_type == 'other'
       self.acquired_from = "other: #{acquired_from_other_description}"

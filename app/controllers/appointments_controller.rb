@@ -3,7 +3,9 @@ class AppointmentsController < ApplicationController
   layout 'admin'
 
   def index
-    @appointments = Appointment.paginate :page => params[:page], :order => 'created_at DESC'
+    @search = Appointment.search(params[:search])
+    @search.ascend_by_id
+    @appointments = @search.paginate(:page => params[:page])
   end
 
   def show

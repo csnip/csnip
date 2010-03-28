@@ -1,27 +1,39 @@
 #appointments_listing
   %h2 Appointments
   .search
-    - form_tag(search_path) do
+
+    - form_for @search do |f|
       %label Last Name:
-      = text_field_tag :last_name
+      = f.text_field :last_name_like
+      
       %label County:
-      = text_field_tag :county
-      %label Zipcode
-      = text_field_tag :postal_code, nil, :size => 10, :max_length => 10
-      .booleans
-        %label Cat
-        = radio_button_tag :cat_or_dog, :cat
-        %label "Dog"
-        = radio_button_tag :cat_or_dog, :dog
-        %label Vaccinated?
-        = check_box_tag :vaccinated
-      = submit_tag "Search", :class => "button"
+      = f.text_field :county_like
+      
+      %label Zipcode:
+      = f.text_field :postal_code_like, :size => 10
+      
+      = f.check_box :cats
+      %label Cats
+
+      = f.check_box :dogs
+      %label Dogs
+
+      = f.submit "Search"
+
+  .statistics
+    Cats
+    = @search.count(:conditions => {:cat_or_dog => 'cat'})
+
+    Dogs
+    = @search.count(:conditions => {:cat_or_dog => 'dog'})
 
   - if @appointments.blank?
-    %h2 There are no appointments.
+    %h3.no_data There are no appointments matching the criteria you've selected.
+    
   - else
     = will_paginate @appointments
     - form_tag(appointment_path(0), :method => 'get') do
+      = submit_tag "Print Selected" 
       %table
         %thead
           %tr
@@ -37,10 +49,6 @@
             %th Meds?
             %th &nbsp;
         %tbody
-          %tr.last
-            %td{ :colspan => "2"}
-              = submit_tag "Print Selected"
-            %td{ :colspan => "8" }
           - @appointments.each do |appointment|
             %tr
               %td
@@ -67,8 +75,8 @@
                 = appointment.medications_explanation
               %td
                 = link_to 'Show', appointment
-            %tr.last
-              %td{ :colspan => "2" }
-                = submit_tag "Print Selected"
-              %td{ :colspan => "8" } &nbsp;
+          %tr.last
+            %td{ :colspan => "2" }
+              = submit_tag "Print Selected"
+            %td{ :colspan => "8" } &nbsp;
     = will_paginate @appointments
