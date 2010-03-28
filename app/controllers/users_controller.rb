@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:new]
-
+  
   def authorized?(action = action_name, resource = nil)
     logged_in? ? current_user.admin? : User.count == 0
   end
