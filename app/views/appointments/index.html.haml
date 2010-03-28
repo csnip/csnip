@@ -12,7 +12,8 @@
       %label Zipcode:
       = f.text_field :postal_code_like, :size => 10
       
-      |
+      %span.separator
+        |
       
       = f.check_box "pet_type_equals_any", {:name => "search[pet_type_equals_any][]"}, "cat"
       %label Cats
@@ -20,25 +21,21 @@
       = f.check_box "pet_type_equals_any", {:name => "search[pet_type_equals_any][]"}, "dog"
       %label Dogs
 
-      |
+      %span.separator
+        |
       
-      %label Date From:
-      = f.text_field :postal_code_like, :size => 8
+      %label Dates
+      = f.text_field :created_at_after, :size => 8
 
-      %label To:
-      = f.text_field :postal_code_like, :size => 8
+      %label -
+      = f.text_field :created_at_before, :size => 8
 
       = f.submit "Search"
 
-  .statistics
-    Cats
-    = @search.count(:conditions => {:pet_type => 'cat'})
-
-    Dogs
-    = @search.count(:conditions => {:pet_type => 'dog'})
-    
-    Total
-    = @search.count
+  .search_statistics
+    = "Search returned <strong>#{number_with_delimiter(@search.count)}</strong> results: "
+    = "<strong>#{@search.count(:conditions => {:pet_type => 'cat'})}</strong> cats and "
+    = "<strong>#{@search.count(:conditions => {:pet_type => 'dog'})}</strong> dogs."
 
   - if @appointments.blank?
     %h3.no_data There are no appointments matching the criteria you've selected.

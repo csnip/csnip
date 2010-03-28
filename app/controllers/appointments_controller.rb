@@ -4,6 +4,7 @@ class AppointmentsController < ApplicationController
 
   def index
     @search = Appointment.search(params[:search])
+    @search.pet_type_equals_any = %w[dog cat] unless params[:search] && params[:search][:pet_type_equals_any]
     @appointments = @search.paginate(:page => params[:page], :per_page => 50)
   end
 
