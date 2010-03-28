@@ -4,9 +4,9 @@ Feature: New Appointments Features
   I can view and print appointment requests
 
   Scenario: New Appointment administration
-    Given there is a new request
+    Given a new request
     And I am logged in as an administrator
     When I view the list of requests
     Then I should see the new request
-    And the new request should not be marked acknoweldged
-    
+    And the appointment status should be requested
+

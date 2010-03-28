@@ -50,7 +50,7 @@
             <% @appointments.each do |appointment| -%>
               <tr>
                 <td><%= check_box_tag "ids[]", appointment.id %></td>
-                <td><%= appointment.id %></td>
+                <td class="id"><%= appointment.id %></td>
                 <td><%= appointment.name %> </td>
                 <td>
                   <%= appointment.phone %><br />

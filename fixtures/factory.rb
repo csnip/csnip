@@ -13,7 +13,6 @@ Factory.define(:new_appointment, :parent => :appointment) do |f|
 end
 
 Factory.define(:new_request, :parent => :appointment) do |f|
-  f.current_state :requested
 end
 
 Factory.define(:user) do |f|
