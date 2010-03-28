@@ -42,6 +42,10 @@
           </tr>
         </thead>
         <tbody>
+            <tr class="last">
+              <td colspan="2"><%= submit_tag "Print Selected" %></td>
+              <td colspan="8">&nbsp;</td>
+            </tr>
           <%- form_tag(appointment_path(0), :method => 'get') do -%>
             <% @appointments.each do |appointment| -%>
               <tr>

@@ -13,10 +13,12 @@
     <%= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection' %>
   <![endif]-->
 </head>
-<body class="bp">
+<body class="bp admin">
   <div id="container">
+    <div id="bar"><%= link_to "&larr; Back to Site", "http://csnip.org" %></div>
     <div id="header">
-      <iframe src="http://csnip.org/csnip-app-header.html" width="100%" scrolling="no" height="200px"></iframe>
+      <%= image_tag("logo.png", :style => "float: left") %>
+      <h1>Request an Appointment</h1>
     </div>
       
     <%= flash_div :error, :warning, :notice %>
