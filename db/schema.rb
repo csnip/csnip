@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(:version => 20100328152248) do
     t.text     "comments"
     t.string   "email"
     t.string   "acquired_from"
-    t.string   "current_status"
     t.string   "best_time_to_contact_client"
     t.string   "pet_vaccinated"
     t.string   "pet_pregnant"
     t.string   "pet_in_heat"
     t.string   "pet_testicles_decended"
+    t.string   "current_status"
   end
 
   add_index "appointments", ["current_status"], :name => "index_appointments_on_current_status"
