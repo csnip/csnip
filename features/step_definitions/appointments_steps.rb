@@ -11,7 +11,7 @@ Given /^I am logged in as an administrator$/ do
   visit path_to("the login page")
   fill_in(:login, :with => @user.login)
   fill_in(:password, :with => @user.password)
-  click_button("Log In")
+  click_button("Log in")
 end
 
 When /^I view the list of requests$/ do
@@ -33,6 +33,6 @@ When /^the client submits the appointment request form$/ do
   click_button(:appointment_submit)
 end
 
-Then /^the appointment status should be requested$/ do
-  @appointment.current_status.should == 'requested'
+Then /^the status of the appointment should be (.*)$/ do |status|
+  @appointment.current_status.should == status
 end

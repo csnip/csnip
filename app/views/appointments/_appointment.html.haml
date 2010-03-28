@@ -1,0 +1,102 @@
+%h2 Appointment
+%table.single_record{ :cellpadding => "3", :width => "100%" }
+  %tbody
+    %tr
+      %th{ :width => "50%" } Request created on
+      %td{ :width => "50%" } #{appointment.created_at.to_s(:mdytz)}
+    %tr
+      %th Client name
+      %td #{appointment.client_name_last_comma_first}
+    %tr
+      %th Phone
+      %td #{formatted_phone(appointment.phone)}
+    %tr
+      %th What is the best time to contact you?
+      %td #{appointment.best_time_to_contact_client}
+    %tr
+      %th Alternate phone
+      %td #{formatted_phone(appointment.alternate_phone)}
+    %tr
+      %th Email
+      %td= mail_to(h(appointment.email)) unless appointment.email.blank?
+    %tr
+      %th Street address
+      %td #{appointment.street}
+    %tr
+      %th City
+      %td #{appointment.city}
+    %tr
+      %th Zipcode
+      %td #{appointment.postal_code}
+    %tr
+      %th County
+      %td #{appointment.county}
+    %tr
+      %th Pet name
+      %td #{appointment.pet_name}
+    %tr
+      %th Type of pet
+      %td #{appointment.cat_or_dog}
+    %tr
+      %th Gender
+      %td #{appointment.gender}
+    %tr
+      %th Age
+      %td #{appointment.age}
+    %tr
+      %th Weight
+      %td #{appointment.weight}
+    %tr
+      %th Date of birth
+      %td #{appointment.date_of_birth}
+    %tr
+      %th Breed
+      %td #{appointment.breed}
+    %tr
+      %th Color
+      %td #{appointment.color}
+    %tr
+      %th Would you like a chip implant?
+      %td #{formatted_boolean(appointment.want_chip_implant?)}
+    %tr
+      %th Would you like a rabies vaccination?
+      %td #{formatted_boolean(appointment.want_rabies_vaccination?)}
+    %tr
+      %th Additional information
+      %td #{appointment.comments}
+    %tr
+      %th Is your pet in heat?
+      %td #{appointment.pet_in_heat}
+    %tr
+      %th Is your pet pregnant?
+      %td #{appointment.pet_pregnant}
+    %tr
+      %th Did you pet have a litter? If so, when?
+      %td #{appointment.had_litter_when}
+    %tr
+      %th Has your male pet's testicles decended?
+      %td #{appointment.pet_testicles_decended}
+    %tr
+      %th If so, how many?
+      %td #{appointment.testicle_count}
+    %tr
+      %th How did you acquire your pet?
+      %td #{appointment.testicle_count}
+    %tr
+      %th How long have you owned your pet?
+      %td #{appointment.owned_for}
+    %tr
+      %th Has your pet been vaccinated?
+      %td #{appointment.pet_vaccinated}
+    %tr
+      %th Veterinarian's name
+      %td #{appointment.vet_name}
+    %tr
+      %th Any previous surgery? If so, please explain
+      %td #{appointment.surgeries_explanation}
+    %tr
+      %th Any previous health issues? If so, please explain
+      %td #{appointment.health_concerns_explanation}
+    %tr
+      %th Any medications? If so, please explain
+      %td #{appointment.medications_explanation}

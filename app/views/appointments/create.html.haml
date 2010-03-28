@@ -1,0 +1,7 @@
+.thanks
+  %p
+    Thank you for providing information about you and your pet.
+    Doing so online allows us to devote more of our resources to taking care of your pet.
+  %p
+    We will call you within 3 to 5 business days for any further information and to schedule an appointment.
+  = link_to "Click here if you have another pet to add", new_appointment_path(:appointment => @appointment.person_attributes) 
