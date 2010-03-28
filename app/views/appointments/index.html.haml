@@ -48,11 +48,10 @@
             %th Client Name
             %th Phone
             %th Pet Name
+            %th Pet Type
+            %th Pet Sex
             %th Vaccinated?
             %th Pregnant?
-            %th Surgery?
-            %th Health?
-            %th Meds?
             %th &nbsp;
         %tbody
           - @appointments.each do |appointment|
@@ -68,17 +67,15 @@
                 %br
                 = formatted_phone(appointment.alternate_phone)
               %td
-                = "#{appointment.pet_type} / #{appointment.gender}: #{appointment.pet_name}"
+                = appointment.pet_name
+              %td
+                = appointment.pet_type.capitalize
+              %td
+                = appointment.gender.capitalize
               %td
                 = appointment.pet_vaccinated
               %td
                 = appointment.pet_pregnant
-              %td
-                = appointment.surgeries_explanation
-              %td
-                = appointment.health_concerns_explanation
-              %td
-                = appointment.medications_explanation
               %td
                 = link_to 'Show', appointment
           %tr.last
