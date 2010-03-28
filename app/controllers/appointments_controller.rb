@@ -4,7 +4,6 @@ class AppointmentsController < ApplicationController
 
   def index
     @search = Appointment.search(params[:search])
-    @search.ascend_by_id
     @appointments = @search.paginate(:page => params[:page])
   end
 

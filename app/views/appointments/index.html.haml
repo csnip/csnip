@@ -15,10 +15,10 @@
       %label Zipcode:
       = f.text_field :postal_code_like, :size => 10
       
-      = f.check_box "pet_type_like_any[]", :value => "cat"
+      = f.check_box "pet_type_equals_any", {:name => "search[pet_type_equals_any][]"}, "cat"
       %label Cats
 
-      = f.check_box "pet_type_like_any[]", :value => "dog"
+      = f.check_box "pet_type_equals_any", {:name => "search[pet_type_equals_any][]"}, "dog"
       %label Dogs
 
       = f.submit "Search"
@@ -29,6 +29,9 @@
 
     Dogs
     = @search.count(:conditions => {:pet_type => 'dog'})
+    
+    Total
+    = @search.count
 
   - if @appointments.blank?
     %h3.no_data There are no appointments matching the criteria you've selected.
