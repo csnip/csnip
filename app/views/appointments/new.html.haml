@@ -137,7 +137,7 @@
         = form.label :acquired_from_type, "Other", :value => :other
         %br
           %span{ :style => 'margin-left: 20px;' }
-            = from.text_field_tag :acquired_from_other_description
+            = form.text_field :acquired_from_other_description
         %br
       %p
         = form.label :owned_for, "How long have you owned your pet?"
