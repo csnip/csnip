@@ -10,11 +10,12 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    if params[:ids]
-      @appointments = Appointment.find(params[:ids])
-    elsif params[:id]
-      @appointments = [Appointment.find(params[:id])]
-    end
+    @appointment = Appointment.find(params[:id])
+  end
+
+  def print
+    @appointments = Appointment.find(params[:ids])
+    @appointments.each { |a| a.print! }
   end
 
   def new
@@ -31,12 +32,4 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  def confirm_print
-    # move this logic down into the model...
-    if params[:appointment_ids]
-      Appointment.update_all({:current_status => "acknowledged"}, 
-                             ["id IN (?)", params[:appointment_ids] ])
-    end
-  end
-  
 end

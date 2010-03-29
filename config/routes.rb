@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => :appointments, :action => :index
-  map.resources :appointments
+  map.resources :appointments, :collection => {:print => :post}
   
   map.resource :session
   map.logout   '/logout',   :controller => 'sessions', :action => 'destroy'

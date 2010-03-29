@@ -6,9 +6,13 @@ class Appointment < ActiveRecord::Base
   aasm_initial_state :requested
 
   aasm_state :requested
-#  aasm_state :acknowledged
+  aasm_state :acknowledged
 #  aasm_state :scheduled
-#  aasm_state :completed
+  #  aasm_state :completed
+
+  aasm_event :print do
+    transitions :to => :acknowledged, :from => :requested
+  end
 
   validates_presence_of :last_name, :first_name, :phone, :pet_type, :gender, :age, :pet_name
   attr_accessor :acquired_from_type, :acquired_from_other_description
@@ -46,4 +50,5 @@ class Appointment < ActiveRecord::Base
       self.acquired_from = acquired_from_type
     end
   end
+
 end

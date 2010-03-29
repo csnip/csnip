@@ -21,7 +21,6 @@ end
 
 Then /^I should see the new request$/ do
   response.should have_selector(:tr, :id => "appointment_#{@appointment.id}")
-#  Then "I should see \"#{@appointment.id}\" within \"td.id\""
 end
 
 When /^the client submits the appointment request form$/ do
@@ -44,9 +43,6 @@ When /^I print the list of new requests$/ do
   visit path_to("the appointments list page")
   check("appointment_checkbox_#{@appointment.id}")
   click_button(:print_submit)
-  controller.params[:appointment_ids] = [@appointment.id]
-  controller.confirm_print
-  @appointment.reload
 end
 
 Given /^I view an appointment request$/ do
