@@ -1,4 +1,0 @@
-# csnip.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
-ffi -v0.6.3
-rack -v1.0.1
-sqlite3-ruby -v1.2.5
